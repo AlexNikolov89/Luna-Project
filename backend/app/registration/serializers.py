@@ -1,10 +1,10 @@
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
-from backend.app.emails.models import Email
-from backend.app.registration.models import RegistrationProfile
-from backend.app.registration.models import code_generator
-from backend.app.registration.signals import post_user_registration_validation, post_user_password_reset_validation
+from app.emails.models import Email
+from app.registration.models import RegistrationProfile
+from app.registration.models import code_generator
+# from app.registration.signals import post_user_registration_validation, post_user_password_reset_validation
 
 User = get_user_model()
 
@@ -101,7 +101,7 @@ class RegistrationValidationSerializer(serializers.Serializer):
         user.registration_profile.code_used = True
         user.save()
         user.registration_profile.save()
-        post_user_registration_validation.send(sender=User, user=user)
+        # post_user_registration_validation.send(sender=User, user=user)
         return user
 
 
@@ -144,5 +144,5 @@ class PasswordResetValidationSerializer(serializers.Serializer):
         user.registration_profile.code_used = True
         user.save()
         user.registration_profile.save()
-        post_user_password_reset_validation.send(sender=User, user=user)
+        # post_user_password_reset_validation.send(sender=User, user=user)
         return user
