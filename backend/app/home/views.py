@@ -1,3 +1,3 @@
 
 
-class ListBestRestaurantsView():
+# class ListBestRestaurantsView():

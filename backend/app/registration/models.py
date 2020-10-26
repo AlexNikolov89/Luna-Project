@@ -1,7 +1,9 @@
-from django_extensions.db.models import TimeStampedModel
+
 from django.conf import settings
 from django.db import models
 import random
+
+from django_extensions.db.models import TimeStampedModel
 
 
 def code_generator(length=5):
