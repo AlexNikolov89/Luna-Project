@@ -44,9 +44,12 @@ INSTALLED_APPS = [
     # third-party
     'rest_framework',
     'django_countries',
+    'fullurl',
 
     # own
     'app',
+    'app.emails',
+    'app.users',
 
 ]
 

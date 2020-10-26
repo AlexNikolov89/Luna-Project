@@ -16,3 +16,5 @@ dependencies:
     - django-cors-headers
     - django-countries
     - drf-yasg
+    - django-extensions # required for email functionality
+    - django-fullurl # required for email functionality
