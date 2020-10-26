@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/group-projects/taurus/luna:latest
+    image: app:latest
     restart: always
     env_file:
       - ./env/dev.env
@@ -15,8 +15,8 @@ services:
       - static-files:/static-files
     ports:
       - '8000:8000'
-    depends_on:
-      - postgres
+    # depends_on:
+    #   - postgres
 
   postgres:
     image: postgres:latest
