@@ -62,6 +62,17 @@ export const ContainerLink = styled.div`
 
 export const LinkPages = styled.p`
     text-decoration: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    color: #4A4A4A;
+
+   &:hover {
+    font-weight: bold;
+    padding-bottom: 13px;
+    border-bottom: 2px solid #E47D31;
+   }
 `
 
 
