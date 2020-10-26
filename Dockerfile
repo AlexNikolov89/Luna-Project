@@ -13,10 +13,10 @@ COPY ./backend/requirements.yml /backend/requirements.yml
 
 RUN /opt/conda/bin/conda env create -f /backend/requirements.yml
 
-ENV PATH /opt/conda/envs/backend/bin:$PATH
+ENV PATH /opt/conda/envs/luna_backend/bin:$PATH
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN echo "source activate backend" >~/.bashrc
+RUN echo "source activate luna_backend" >~/.bashrc
 
 # create scripts folder
 RUN mkdir -p /scripts

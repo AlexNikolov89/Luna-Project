@@ -1,9 +1,11 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django_filters.rest_framework import filters
 
 from rest_framework.generics import RetrieveUpdateAPIView, ListAPIView
 
-from backend.app.users.serializers import UserSerializer
+from app.users.serializers import UserSerializer
+
+User = get_user_model()
 
 
 # get and update my user profile
@@ -45,5 +47,5 @@ class SearchUser(ListAPIView):
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    filter_backends = (filters.SearchFilter,)
+    # filter_backends = (filters.SearchFilter,)
     search_fields = ('username', 'last_name', 'first_name', 'email')
