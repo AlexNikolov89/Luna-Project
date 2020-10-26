@@ -1,18 +1,19 @@
 import React from 'react'
 import {HomepageContainer} from './style'
-import Header from '../header/Header'
+import Navbar from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import Footer from '../footer/Footer';
+import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter';
+import FooterNavigation from '../footer/footerNavigation/FooterNavigation';
+import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 
 const Homepage = () => {
     return (
         <HomepageContainer>
-            <Header />
+            <Navbar />
             <SearchForm />
-            <section>
-            
-            </section>
-            <Footer />
+            <BestRatedRestaurant />
+            <FooterNavigation />
+            <CopyRightFooter />
         </HomepageContainer>
     )
 }

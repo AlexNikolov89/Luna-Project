@@ -1,28 +1,30 @@
 import React from 'react'
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import { HeaderContainer, LogoWrapper, RightContainer, HeaderNavigation, Button } from './style'
+import { MainContainer, LogoWrapper, SinUpButton, SinInButton, ContainerLink, ContainerButton, LinkPages } from './style'
 
-export const Navbar = () => {
+const Navbar = () => {
     return (
-        <HeaderContainer>
+        <MainContainer>
             <LogoWrapper>
                 <h2>LUNA</h2>
             </LogoWrapper>
-            <RightContainer>
-                <BrowserRouter>
-                    <HeaderNavigation>
-                        <Link to='/'><p>Home</p></Link>
-                        <Link to='/search'><p>Search</p></Link>
-                        <Link to='/profile'><p>Profile</p></Link>
-                    </HeaderNavigation>
-                    <Link to='signup'>
-                        <Button className='right'>SIGNUP</Button>
-                    </Link>
-                    <Link to='/Login'>
-                        <Button className='left'>LOGIN</Button>
-                    </Link>
-                </BrowserRouter>
-            </RightContainer>
-        </HeaderContainer>
+
+            <ContainerLink>
+                <Link style={{ textDecoration: "none" }} to='/'><LinkPages>Home</LinkPages></Link>
+                <Link style={{ textDecoration: "none" }} to='/search'><LinkPages>Search</LinkPages></Link>
+                <Link style={{ textDecoration: "none" }} to='/profile'><LinkPages>Profile</LinkPages></Link>
+            </ContainerLink>
+            <ContainerButton>
+                <Link to='signup'>
+                    <SinUpButton >SIGNUP</SinUpButton>
+                </Link>
+                <Link to='/'>
+                    <SinInButton >LOGIN</SinInButton>
+                </Link>
+            </ContainerButton>
+        </MainContainer>
+
     )
 }
+
+export default Navbar;
