@@ -1,6 +1,6 @@
 import React from 'react';
 import Style from './style';
-import { Navbar } from '../Header'
+import Navbar from '../Header'
 
 export const Registration = () => {
 
