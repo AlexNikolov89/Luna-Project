@@ -5,7 +5,7 @@ from django.db import models
 class Restaurant(models.Model):
     name = models.CharField(max_length=50)
     category = models.TextField()
-    country = CountryField(blank_label='(select country)')
+    # country = CountryField(blank_label='(select country)')
     street = models.TextField(max_length=100)
     city = models.TextField(max_length=100)
     zip = models.TextField(max_length=10)
