@@ -1,28 +1,18 @@
 import React from 'react';
-import {BodyContainer, Title,
-         HorizontalLine, RestaurantOne,
-         TopContainer, RatingContent, RestaurantTwo} from './style'
-import Star from '../../images/svg/star.svg';
+import {BodyContainer, Title, HorizontalLine, RestaurantsListing} from './style'
+import Card from '../card/Card'
 
 
-const BestRatedRestaurant = () => {
+const BestRatedRestaurant = ({restaurant}) => {
     return (
         <BodyContainer>
             <Title>BEST RATED RESTAURANT</Title>
             <HorizontalLine />
-
-            <RestaurantOne>
-                <TopContainer>
-                    <p>Restaurant Name</p>
-                    <p>Address</p>
-                    <RatingContent>
-                        <img src={Star} />
-                        <p>0</p>
-                    </RatingContent>
-                </TopContainer>
-            </RestaurantOne>
+            <RestaurantsListing>
+            <Card />
+            </RestaurantsListing>
         </BodyContainer>
     )
 }
 
-export default BestRatedRestaurant
+export default BestRatedRestaurant;
