@@ -1,18 +1,29 @@
-import React from 'react'
-import {HomepageContainer} from './style'
-import Header from '../header/Header'
+import React, {useState} from 'react'
+import {HomepageContainer, BestRestaurantsContainer} from './style'
+import Navbar from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import Footer from '../footer/Footer';
+import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter';
+import FooterNavigation from '../footer/footerNavigation/FooterNavigation';
+import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 
 const Homepage = () => {
+
+    const [restaurants, setRestaurants] = useState([]);
+
     return (
         <HomepageContainer>
-            <Header />
+            <Navbar />
             <SearchForm />
-            <section>
-            
-            </section>
-            <Footer />
+            <BestRatedRestaurant />
+
+            <BestRestaurantsContainer>
+                {restaurants.map((restaurant) => (
+                    <BestRatedRestaurant restaurant={restaurant} key={restaurant.id}>{restaurant}</BestRatedRestaurant>
+                ))}
+            </BestRestaurantsContainer>
+
+            <FooterNavigation />
+            <CopyRightFooter />
         </HomepageContainer>
     )
 }

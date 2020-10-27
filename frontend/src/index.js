@@ -8,6 +8,8 @@ import reportWebVitals from './reportWebVitals';
 import { Registration } from './components/Registration';
 import { Verification } from './components/Verification';
 import { MessageRegistration } from './components/MessageRegistration';
+// import Homepage from './components/homepage/Homepage';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +20,7 @@ ReactDOM.render(
         <Route exact={true} path="/test" component={Test} />
         <Route exact={true} path="/messageReg" component={MessageRegistration} />
         <Route exact={true} path="/verification" component={Verification} />
+        {/* <Route exact={true} path="/homepage" component={Homepage} /> */}
       </Switch>
     </Router>
   </React.StrictMode>,
