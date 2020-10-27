@@ -27,20 +27,20 @@ export const Registration = () => {
             header: headers,
         }
 
-        fetch("http://0.0.0.0:8000/backend/api/auth/registration/", config)
+        fetch("http://0.0.0.0:8000/backend/api/auth/registration/ ", config)
             .then(response => {
                 if (response.ok) {
                     return response.json();
                 } else throw new Error("Email non valid");
             })
             .then(data => {
-                console.log(data)
+                console.log("in my respone", data)
             })
             .catch(error => {
                 console.log(error);
             })
     }
-    console.log("in my email", emailRegistration)
+    // console.log("in my email", emailRegistration)
     return (
         <>
             <Navbar />
