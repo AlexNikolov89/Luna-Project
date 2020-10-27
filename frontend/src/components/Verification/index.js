@@ -11,7 +11,7 @@ export const Verification = () => {
             <Style.MainVerification>
                 <Style.ContainerVerificationForm>
                     <Style.DivVerificationText>
-                        <Style.TextVerification>REGISTRATION</Style.TextVerification>
+                        <Style.TextVerification>VERIFICATION</Style.TextVerification>
                         <Style.Line></Style.Line>
                     </Style.DivVerificationText>
                     <Style.ContentForm>
