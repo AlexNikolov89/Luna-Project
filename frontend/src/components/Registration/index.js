@@ -7,16 +7,17 @@ import { Link } from 'react-router-dom';
 
 
 export const Registration = () => {
-    const [emailRegistration, setEmailRegistration] = useState();
+    const [emailRegistration, setEmailRegistration] = useState("");
     const [show, setShow] = useState(false)
 
 
     const handleEmailRegistration = (e) => {
+        e.preventDefault();
         setEmailRegistration(e.currentTarget.value);
     }
 
     const handleRegistration = () => {
-        setShow(!show)
+
         const headers = new Headers({
             "Content-type": "application/json"
         })
@@ -28,6 +29,7 @@ export const Registration = () => {
         }
 
         fetch("http://0.0.0.0:8000/backend/api/auth/registration/ ", config)
+            // .then(response => response.json())
             .then(response => {
                 if (response.ok) {
                     return response.json();

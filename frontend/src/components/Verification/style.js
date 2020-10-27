@@ -6,7 +6,7 @@ export const MainVerification = styled.section`
     justify-content:center;
     width:100%;
     background: #F2F2F2;
-    border:solid 2px black;
+    // border:solid 2px black;
 `
 
 export const ContainerVerificationForm = styled.section`
@@ -14,40 +14,50 @@ export const ContainerVerificationForm = styled.section`
     flex-direction:column;
     height:100%;
     width:70%;
-    border:solid 2px yellow;
+    // border:solid 2px yellow;
 `
 
 export const ContentForm = styled.section`
     display:flex;
-    height:100%;
+    margin-top:5%;
+    height:40%;
     width:100%;
-    border:solid 2px blue;
+    // border:solid 2px blue;
 `
 export const ContentFormLeftSide = styled.section`
     display:flex;
     justify-content:flex-end;
     height:100%;
-    width:50%;
-    // margin-right:1%;
-    border:solid 2px gray;
+    width:49%;
+    margin-right:1%;
+    // border:solid 2px gray;
 `
 
-export const ContainerInputFields = styled.div`
+export const ContainerInputFieldsLeft = styled.div`
     display:flex;
     flex-direction:column;
     justify-content:space-evenly;
-    height:50%;
-    width:61%;
-    border:solid 2px green;
+    height:100%;
+    width:auto;
+    // border:solid 2px green;
+`
+
+export const ContainerInputFieldsRight = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    height:100%;
+    width:auto;
+    // border:solid 2px yellow;
 `
 
 export const ContentFormRightSide = styled.section`
     display:flex;
-    flex-direction:column;
+    justify-content:flex-start;
     height:100%;
-    width:50%;
-    // margin-left:1%;
-    border:solid 2px gray;
+    width:49%;
+    margin-left:1%;
+    // border:solid 2px gray;
 `
 
 export const DivVerificationText = styled.div`
@@ -58,7 +68,7 @@ export const DivVerificationText = styled.div`
     height:10%;
     width:100%;
     margin-top:2%;
-    border:solid 2px green;
+    // border:solid 2px green;
 `
 export const TextVerification = styled.h1`
     font-family: Helvetica;
@@ -74,7 +84,7 @@ export const Line = styled.line`
 `
 
 const InputEmailVerification = styled.input`
-    width:380px;
+    width:330px;
     height:45px;
     // margin-top:3%;
     border: 1px solid #EBEBEB;
@@ -87,7 +97,7 @@ const InputEmailVerification = styled.input`
 `
 
 const InputUserNameVerification = styled.input`
-    width:380px;
+    width:330px;
     height:45px;
     // margin-top:3%;
     border: 1px solid #EBEBEB;
@@ -101,7 +111,7 @@ const InputUserNameVerification = styled.input`
 
 
 const InputUsernameVerification = styled.input`
-    width:380px;
+    width:330px;
     height:45px;
     // margin-top:3%;
     border: 1px solid #EBEBEB;
@@ -113,8 +123,74 @@ const InputUsernameVerification = styled.input`
     }
 `
 
+const InputVerificationCode = styled.input`
+    width:330px;
+    height:45px;
+    // margin-top:3%;
+    border: 1px solid #EBEBEB;
+    outline:none;
+    ::placeholder,
+    ::-webkit-input-placeholder {
+      font-size:20px;
+      font-weight: bold;
+    }
+`
+
+const InputLocationVerification = styled.input`
+    width:330px;
+    height:45px;
+    // margin-top:3%;
+    border: 1px solid #EBEBEB;
+    outline:none;
+    ::placeholder,
+    ::-webkit-input-placeholder {
+      font-size:20px;
+      font-weight: bold;
+    }
+`
+
+const InputPswRepeatVerification = styled.input`
+    width:330px;
+    height:45px;
+    // margin-top:3%;
+    border: 1px solid #EBEBEB;
+    outline:none;
+    ::placeholder,
+    ::-webkit-input-placeholder {
+      font-size:20px;
+      font-weight: bold;
+    }
+`
+
+const ContentButtonFinishVerification = styled.section`
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:4%;
+    height:10%;
+    width:100%;
+    // border:2px solid black;
+`
+
+const ButtonVerificationFinish = styled.button`
+    width:259px;
+    height:56px;
+    border-radius:28px;
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color:white;
+    background: #E47D31;
+    border:none;
+    outline:none;
+    cursor:pointer;
+`
+
 export default {
     MainVerification, DivVerificationText, TextVerification, Line,
     ContainerVerificationForm, ContentForm, ContentFormLeftSide, ContentFormRightSide,
-    InputEmailVerification, InputUserNameVerification, InputUsernameVerification, ContainerInputFields
+    InputEmailVerification, InputUserNameVerification, InputUsernameVerification, ContainerInputFieldsLeft,
+    InputVerificationCode, InputLocationVerification, InputPswRepeatVerification, ContainerInputFieldsRight,
+    ContentButtonFinishVerification, ButtonVerificationFinish
 }

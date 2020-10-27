@@ -16,14 +16,23 @@ export const Verification = () => {
                     </Style.DivVerificationText>
                     <Style.ContentForm>
                         <Style.ContentFormLeftSide>
-                            <Style.ContainerInputFields>
+                            <Style.ContainerInputFieldsLeft>
                                 <Style.InputEmailVerification type="email" placeholder="E-Mail address" />
                                 <Style.InputUserNameVerification type="text" placeholder="Username" />
                                 <Style.InputUsernameVerification type="password" placeholder="Password" />
-                            </Style.ContainerInputFields>
+                            </Style.ContainerInputFieldsLeft>
                         </Style.ContentFormLeftSide>
-                        <Style.ContentFormRightSide></Style.ContentFormRightSide>
+                        <Style.ContentFormRightSide>
+                            <Style.ContainerInputFieldsRight>
+                                <Style.InputVerificationCode type="text" placeholder="Validation code" />
+                                <Style.InputLocationVerification type="text" placeholder="Location" />
+                                <Style.InputPswRepeatVerification type="password" placeholder="Password repeat" />
+                            </Style.ContainerInputFieldsRight>
+                        </Style.ContentFormRightSide>
                     </Style.ContentForm>
+                    <Style.ContentButtonFinishVerification>
+                        <Style.ButtonVerificationFinish>Finish Registration</Style.ButtonVerificationFinish>
+                    </Style.ContentButtonFinishVerification>
                 </Style.ContainerVerificationForm>
             </Style.MainVerification>
             <Footer />
