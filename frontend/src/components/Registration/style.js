@@ -28,6 +28,7 @@ export const TextRegistrationButton = styled.text`
 export const InputEmailRegistration = styled.input`
     width:380px;
     height:45px;
+    margin-top:3%;
     border: 1px solid #EBEBEB;
     outline:none;
     ::placeholder,
@@ -52,15 +53,18 @@ export const ContainerRegistrationForm = styled.section`
     flex-direction:column;
     height:100%;
     width:70%;
-    border: 2px solid yellow;
+    // border: 2px solid yellow;
 
 `
 export const RegistrationMessage = styled.section`
     position:absolute;
-    margin-left:15%;
+    text-align:center;
+    // z-idex:-2;
+    margin-left:17%;
     background-color: #F2F2F2;
+    margin-top:9%;
     height:30%;
-    width:40%;
+    width:33%;
     // border:solid 2px blue;
 `
 
@@ -72,7 +76,6 @@ export const DivRegistration = styled.div`
     height:10%;
     width:100%;
     margin-top:2%;
-    // border-bottom:3px solid;
     // border:solid 2px green;
 `
 
@@ -85,10 +88,10 @@ export const Line = styled.line`
 export const DivEmailAddress = styled.div`
     display:flex;
     justify-content:center;
-    align-items:center;
-    height:10%;
+    // align-items:center;
+    height:15%;
     width:100%;
-    margin-top:1%;
+    margin-top:1.5%;
     // border:solid 2px blue;
 `
 
@@ -107,7 +110,7 @@ export const DivButtonRegister = styled.div`
 
 export default {
     TextRegistration, ButtonRegistration, TextRegistrationButton,
-    InputEmailRegistration, InputEmailRegistration, MainContainerRegistration,
+    InputEmailRegistration, MainContainerRegistration,
     ContainerRegistrationForm, DivRegistration, DivEmailAddress, DivButtonRegister, Line,
     RegistrationMessage,
 }
