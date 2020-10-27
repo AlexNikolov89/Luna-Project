@@ -1,17 +1,17 @@
 import React from 'react';
 import {BodyContainer, Title,
-         HorizontalLine, RestaurantOne,
-         TopContainer, RatingContent, RestaurantTwo} from './style'
+         HorizontalLine, RestaurantWrapper,
+         TopContainer, RatingContent} from './style'
 import Star from '../../images/svg/star.svg';
 
 
-const BestRatedRestaurant = () => {
+const BestRatedRestaurant = ({restaurant}) => {
     return (
         <BodyContainer>
             <Title>BEST RATED RESTAURANT</Title>
             <HorizontalLine />
 
-            <RestaurantOne>
+            <RestaurantWrapper>
                 <TopContainer>
                     <p>Restaurant Name</p>
                     <p>Address</p>
@@ -20,7 +20,7 @@ const BestRatedRestaurant = () => {
                         <p>0</p>
                     </RatingContent>
                 </TopContainer>
-            </RestaurantOne>
+            </RestaurantWrapper>
         </BodyContainer>
     )
 }
