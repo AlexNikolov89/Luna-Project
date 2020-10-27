@@ -2,8 +2,7 @@ from django.urls import path, include
 
 from app.reviews.views.comments import UserComments, CreateReviewsComments, DeleteReviewsComments
 from app.reviews.views.reviews import ReviewCreateView, ListReviewsSingleRestaurantView, ListReviewsByUserView, \
-    GetUpdateDeleteView, LikeOrNoLikeView, ListLikedReView, ListReviewsCommentViews
-from app.social.views.comments import
+    GetUpdateDeleteView, LikeOrNoLikeView, ListLikedReView, ListReviewsCommentViews, ListAllReviewRestaurant
 
 
 review_patterns = [
