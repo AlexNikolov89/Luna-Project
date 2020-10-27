@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
+import Style from './style';
+import { Navbar } from '../Header';
+import { Footer } from '../Footer/footer';
+
 
 export const Login = () => {
     // const dispatch = useDispatch();
@@ -47,10 +51,13 @@ export const Login = () => {
 
     return (
         <>
-            <label>Email<input type="text" onChange={emailOnChangeHandler} /></label>
-            <label>Password<input type="password" onChange={passwordOnChangeHandler} /></label>
-            <button value="Login" onClick={loginHandler}>Login</button>
-            <Link to="/registration"><button>Sing Up</button></Link>
+            <Navbar />
+            <Style.ContainerLogin>
+                <Style.LabelEmail>Email<input type="text" onChange={emailOnChangeHandler} /></Style.LabelEmail>
+                <Style.LabelPassword>Password<input type="password" onChange={passwordOnChangeHandler} /></Style.LabelPassword>
+                <Style.ButtonLogin value="Login" onClick={loginHandler}>Login</Style.ButtonLogin>
+            </Style.ContainerLogin>
+            <Footer />
         </>
 
 
