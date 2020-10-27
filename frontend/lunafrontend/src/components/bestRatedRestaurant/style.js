@@ -21,7 +21,7 @@ background: #E47D31;
 width: 265px;
 `;
 
-export const RestaurantOne = styled.div `
+export const RestaurantWrapper = styled.div `
     border: 2px solid blue;
     width: 270px;
     height: 410px;
