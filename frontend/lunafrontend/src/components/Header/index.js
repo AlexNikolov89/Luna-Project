@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 import { MainContainer, LogoWrapper, SinUpButton, SinInButton, ContainerLink, ContainerButton, LinkPages } from './style'
 
 const Navbar = () => {
+
     return (
         <MainContainer>
             <LogoWrapper>
@@ -16,7 +17,7 @@ const Navbar = () => {
             </ContainerLink>
             <ContainerButton>
                 <Link to='signup'>
-                    <SinUpButton >SIGNUP</SinUpButton>
+                    <SinUpButton>SIGNUP</SinUpButton>
                 </Link>
                 <Link to='/'>
                     <SinInButton >LOGIN</SinInButton>
