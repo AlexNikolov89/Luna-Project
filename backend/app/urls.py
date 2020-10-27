@@ -8,7 +8,7 @@ api_patterns = [
     path('auth/', include('app.registration.urls')),
     # path('search/', include('app.search.urls')),
     # path('home/', include('app.home.urls')),
-    # path('restaurants/', include('app.restaurants.urls')),
+    path('restaurants/', include('app.restaurants.urls')),
     # path('/', include('app.reviews.urls')),
     path('users/', include('app.users.urls')),
 
