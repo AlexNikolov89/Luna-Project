@@ -1,8 +1,6 @@
 import React from 'react';
-import {BodyContainer, Title,
-         HorizontalLine, RestaurantWrapper,
-         TopContainer, RatingContent} from './style'
-import Star from '../../images/svg/star.svg';
+import {BodyContainer, Title, HorizontalLine, RestaurantsListing} from './style'
+import Card from '../card/Card'
 
 
 const BestRatedRestaurant = ({restaurant}) => {
@@ -10,19 +8,11 @@ const BestRatedRestaurant = ({restaurant}) => {
         <BodyContainer>
             <Title>BEST RATED RESTAURANT</Title>
             <HorizontalLine />
-
-            <RestaurantWrapper>
-                <TopContainer>
-                    <p>Restaurant Name</p>
-                    <p>Address</p>
-                    <RatingContent>
-                        <img src={Star} />
-                        <p>0</p>
-                    </RatingContent>
-                </TopContainer>
-            </RestaurantWrapper>
+            <RestaurantsListing>
+            <Card />
+            </RestaurantsListing>
         </BodyContainer>
     )
 }
 
-export default BestRatedRestaurant
+export default BestRatedRestaurant;

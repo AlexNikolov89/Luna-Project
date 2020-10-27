@@ -8,7 +8,7 @@ export const Routes = () => {
         <BrowserRouter>
         <Router>
             <Switch>
-                <Route path='/home' component={Homepage} exact />
+                
             </Switch>
         </Router>
         </BrowserRouter>
