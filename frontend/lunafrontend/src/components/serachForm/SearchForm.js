@@ -1,13 +1,11 @@
 import React from 'react'
-import {FormWrapper, SearchBox, DropDownButton, Button } from './style'
+import {FormWrapper, SearchBox, DropDownButton, Button, Input } from './style'
 import ArrowIcon from '../../images/svg/arrow.svg'
 
 const SearchForm = () => {
     return (
         <FormWrapper>
-            <SearchBox>
-                <input type='text' placeholder='Search' />
-            </SearchBox>
+                <Input type='text' placeholder='Search' />
                 <Button>
                     <span>Select a category...</span>
                     <img src={ArrowIcon} />
