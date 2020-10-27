@@ -1,6 +1,6 @@
 from django.urls import path
 
-from backend.app.users.views import ListUsers, GetAnyUserProfile, MyUserProfile, SearchUser
+from app.users.views import ListUsers, GetAnyUserProfile, MyUserProfile, SearchUser
 
 urlpatterns = [
     path('list/', ListUsers.as_view(), name='list-users'),

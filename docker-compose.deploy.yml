@@ -16,7 +16,7 @@ services:
 
   backend:
     image: registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/group-projects/taurus/luna:latest
-    restart: always
+    restart: always2
     env_file:
       - ./env/prod.env
     command: 'sh /scripts/run.sh'
