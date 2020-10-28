@@ -7,6 +7,9 @@ import { Test } from './components/test_login';
 import reportWebVitals from './reportWebVitals';
 import { Registration } from './components/Registration';
 import Homepage  from './components/homepage/Homepage';
+import SearchPage from './components/Searchpage/SearchPage';
+import ReviewsPage from './components/reviewsPage/ReviewsPage';
+
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +19,8 @@ ReactDOM.render(
         <Route exact={true} path="/registration" component={Registration} />
         <Route exact={true} path="/test" component={Test} />
         <Route exact={true} path="/homepage" component={Homepage} />
+        <Route exact={true} path='/search' component={SearchPage} />
+        <Route exact={true} path='/reviews' component={ReviewsPage} />
       </Switch>
     </Router>
   </React.StrictMode>,
