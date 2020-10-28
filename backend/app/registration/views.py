@@ -11,6 +11,7 @@ from django.core.mail import send_mail
 
 User = get_user_model()
 
+
 class RegistrationView(GenericAPIView):
     """
     post:
@@ -28,7 +29,6 @@ class RegistrationView(GenericAPIView):
         registration = RegistrationProfile(user=new_user)
         registration.save()
 
-
         send_mail(
             'Your Luna project Login code',
             f'Hello {new_user.username}, \nPlease use the following code to validate your email address: {registration.code}\n'
@@ -39,6 +39,7 @@ class RegistrationView(GenericAPIView):
         )
 
         return Response(status=200)
+
 
 class RegistrationValidationView(GenericAPIView):
     """
