@@ -1,6 +1,8 @@
 from django.conf import settings
 from django.db import models
 
+from app.categories.models import Category
+
 
 def restaurant_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/name/<filename>
@@ -21,7 +23,8 @@ class Restaurant(models.Model):
     ]
 
     name = models.CharField(max_length=50)
-    category = models.CharField(max_length=50)
+    category = models.ForeignKey(to=Category, related_name='restaurants', on_delete=models.CASCADE)
+    # category = models.CharField(max_length=50)
     country = models.TextField(max_length=100, blank=True)
     street = models.TextField(max_length=100, blank=True)
     city = models.TextField(max_length=100, blank=True)
