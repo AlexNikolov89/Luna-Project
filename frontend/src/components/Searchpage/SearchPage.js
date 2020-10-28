@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
-import Navbar from '../Header/index';
-import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter'
-import FooterNavigation from '../footer/footerNavigation/FooterNavigation';
+import {Navbar} from '../Header/index';
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
 import { BodyContainer , WrappedBody, HorizontalLine, TtitleContent, LinkPages, RestaurantsListing} from './style'
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'

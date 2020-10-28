@@ -1,9 +1,8 @@
 import React, {Fragment} from 'react'
-import Navbar from '../Header/index'
-import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter'
-import FooterNavigation from '../footer/footerNavigation/FooterNavigation'
+import {Navbar} from '../Header/index'
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation'
 import SearchForm from '../serachForm/SearchForm'
-import CopyRighFooter from '../footer/copyRightFooter/CopyRighFooter'
 import {ReviewsContainer, HorizontalLine, BodyContainer, ReviewCardWrapper, ButtonLike, ButtonComment} from './style'
 import {TtitleContent, LinkPages, TopContainer, ReviewContent, Image, LikeCommentButton, CommentsArea, CommentsInfo} from './style'
 import {Link} from 'react-router-dom';
@@ -46,7 +45,7 @@ const ReviewsPage = () => {
                     </ReviewsContainer>
             </BodyContainer>
             <FooterNavigation />
-            <CopyRighFooter />
+            <CopyRightFooter />
         </Fragment>
     )
 }
