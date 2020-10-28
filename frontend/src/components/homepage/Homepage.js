@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
-import {HomepageContainer, BestRestaurantsContainer} from './style'
-import Navbar from '../Header/index'
+import React, { useState } from 'react'
+import { HomepageContainer, BestRestaurantsContainer } from './style'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter';
 import FooterNavigation from '../footer/footerNavigation/FooterNavigation';
 import Card from '../card/Card';
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant'
+import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
+import { Navbar } from '../Header';
+
 
 const Homepage = () => {
 

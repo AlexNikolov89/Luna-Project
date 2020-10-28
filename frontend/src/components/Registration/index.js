@@ -4,7 +4,6 @@ import { Navbar } from '../Header'
 import { Footer } from '../Footer/footer'
 
 
-
 export const Registration = (props) => {
     const [emailRegistration, setEmailRegistration] = useState("");
     const [show, setShow] = useState(false);

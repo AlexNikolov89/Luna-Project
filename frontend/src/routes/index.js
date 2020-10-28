@@ -6,6 +6,7 @@ import { Login } from '../components/LunaLogin';
 import { Registration } from '../components/Registration';
 import { Verification } from '../components/Verification';
 import { MessageRegistration } from '../components/MessageRegistration';
+import { Test } from '../components/test_login';
 
 export const Routes = () => {
     return (
@@ -16,6 +17,7 @@ export const Routes = () => {
                 <Route exact={true} path="/regmessage" component={MessageRegistration} />
                 <Route exact={true} path="/verification" component={Verification} />
                 <Route exact={true} path="/regmessage" component={MessageRegistration} />
+                <Route exact={true} path="/test" component={Test} />
                 {/* <Route exact={true} path="/homepage" component={Homepage} /> */}
             </Switch>
         </Router>

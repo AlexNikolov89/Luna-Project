@@ -1,12 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { MainContainer, LogoWrapper, SinUpButton, SinInButton, ContainerLink, ContainerButton, LinkPages } from './style'
+import { MainContainer, LogoWrapper, SinUpButton, SinInButton, ContainerLink, ContainerButton, LinkPages, LogoLuna } from './style'
+import LOGO from '../../images/svg/logo.svg'
 
 export const Navbar = () => {
     return (
         <MainContainer>
             <LogoWrapper>
-                <h2>LUNA</h2>
+                <LogoLuna src={LOGO}></LogoLuna>
             </LogoWrapper>
 
             <ContainerLink>
