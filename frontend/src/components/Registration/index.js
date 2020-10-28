@@ -6,10 +6,11 @@ import { MessageRegistration } from '../MessageRegistration';
 import { Link } from 'react-router-dom';
 
 
-export const Registration = () => {
+export const Registration = (props) => {
     const [emailRegistration, setEmailRegistration] = useState("");
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(false);
 
+    // console.log(props)
 
     const handleEmailRegistration = (e) => {
         e.preventDefault();
@@ -21,41 +22,34 @@ export const Registration = () => {
         const headers = new Headers({
             "Content-type": "application/json"
         })
-        const body = JSON.stringify(emailRegistration)
+        const body = JSON.stringify({ email: emailRegistration })
+        console.log("in my body", body);
         const config = {
             method: "POST",
             body: body,
-            header: headers,
+            headers: headers,
         }
 
         fetch("http://0.0.0.0:8000/backend/api/auth/registration/ ", config)
-            // .then(response => response.json())
             .then(response => {
                 if (response.ok) {
+                    props.history.push("/regmessage");
                     return response.json();
-                } else throw new Error("Email non valid");
+                }
+                else throw new Error("Something wrong is happening")
             })
             .then(data => {
-                console.log("in my respone", data)
+                console.log(data);
             })
             .catch(error => {
                 console.log(error);
             })
     }
-    // console.log("in my email", emailRegistration)
     return (
         <>
             <Navbar />
             <Style.MainContainerRegistration>
                 <Style.ContainerRegistrationForm>
-                    {/* {show ?
-                        <Style.RegistrationMessage>
-                            <p>
-                                Thanks for your registration. Our hard working monkeys are preparing a digital message called E-Mail that will be sent to you soon. Since monkeys arent good in writing the message could end up in you junk folder. Our apologies for any inconvienience.thank for
-                            </p>
-                        </Style.RegistrationMessage>
-                        : null
-                    } */}
                     <Style.DivRegistration>
                         <Style.TextRegistration>REGISTRATION</Style.TextRegistration>
                         <Style.Line></Style.Line>
@@ -64,9 +58,9 @@ export const Registration = () => {
                         <Style.InputEmailRegistration placeholder="E-Mail address" onChange={handleEmailRegistration}></Style.InputEmailRegistration>
                     </Style.DivEmailAddress>
                     <Style.DivButtonRegister>
-                        <Link to="/messageReg"><Style.ButtonRegistration value="register" onClick={handleRegistration}>
+                        <Style.ButtonRegistration value="register" onClick={handleRegistration}>
                             <Style.TextRegistrationButton>Register</Style.TextRegistrationButton>
-                        </Style.ButtonRegistration></Link>
+                        </Style.ButtonRegistration>
                     </Style.DivButtonRegister>
                 </Style.ContainerRegistrationForm>
             </Style.MainContainerRegistration>

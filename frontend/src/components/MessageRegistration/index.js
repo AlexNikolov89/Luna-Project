@@ -5,6 +5,9 @@ import { Footer } from '../Footer/footer';
 
 
 export const MessageRegistration = () => {
+
+
+
     return (
         <>
             <Navbar />

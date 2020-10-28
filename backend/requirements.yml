@@ -9,6 +9,7 @@ dependencies:
     - flake8
     - djangorestframework
     - django-filter
+    - django-cors-headers
     - djangorestframework_simplejwt
     - coreapi
     - gunicorn

@@ -20,7 +20,7 @@ export const ContentinerMessage = styled.section`
 `
 
 export const ContentTextRegistration = styled.div`
-    height:20%;
+    height:auto;
     width:55%;
     margin-top:5%;
     text-align:center;
