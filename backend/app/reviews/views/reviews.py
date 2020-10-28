@@ -4,63 +4,57 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from app.reviews.models import RestaurantReview, ReviewLikes
+from app.reviews.permissions import RestaurantPatchDeletePutPermission
 from app.reviews.serializers import ReviewSerializer
+from app.restaurants.models import Restaurant
 
 
 # /Create new review for a restaurant.
 class ReviewCreateView(CreateAPIView):
     serializer_class = ReviewSerializer
     queryset = RestaurantReview.objects.all()
+    lookup_url_kwarg = 'restaurant_id'
 
     def perform_create(self, serializer):
-        serializer.save(author=self.request.user)
+        restaurant = Restaurant.objects.get(id=self.kwargs['restaurant_id'])
+        serializer.save(review_owner=self.request.user, restaurant_review=restaurant)
 
 
 # /Get the list of the reviews for a single restaurant.
-class ListReviewsSingleRestaurantView(RetrieveAPIView):
+class ListReviewsSingleRestaurantView(ListAPIView):
     serializer_class = ReviewSerializer
     queryset = RestaurantReview.objects.all()
+    lookup_url_kwarg = 'restaurant_id'
     permission_classes = []
     authentication_classes = []
+
+    def get_queryset(self, **kwargs):
+        return RestaurantReview.objects.filter(restaurant_review_id=self.kwargs['restaurant_id'])
 
 
 # /Get the list of the reviews by a single user.
 class ListReviewsByUserView(ListAPIView):
     serializer_class = ReviewSerializer
+    lookup_url_kwarg = 'user_id'
     permission_classes = []
     authentication_classes = []
 
     def get_queryset(self):
-        return RestaurantReview.objects.filter(review_owner=self.request.user)
+        return RestaurantReview.objects.filter(review_owner=self.kwargs['user_id'])
 
 
 # Get/Update/Delete a specific review by ID and display all the information.
-class GetUpdateDeleteView(GenericAPIView):
+class GetUpdateDeleteView(RetrieveUpdateDestroyAPIView):
     queryset = RestaurantReview.objects.all()
     serializer_class = ReviewSerializer
+    lookup_url_kwarg = 'review_id'
     permission_classes = [
-        IsAuthenticated
+        IsAuthenticated,
+        RestaurantPatchDeletePutPermission
     ]
 
-    def get(self, request, **kwargs):
-        post = self.get_object()
-        serializer = self.get_serializer(post)
-        return Response(serializer.data)
 
-    def post(self, request, **kwargs):
-        post = self.get_object()
-        serializer = self.get_serializer(post, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
-
-    def delete(self, request, **kwargs):
-        post = self.get_object()
-        post.delete()
-        return Response('Review Deleted')
-
-
-# Like and Remove a Like  from the review
+# Like and Remove a Like from the review
 class LikeOrNoLikeView(RetrieveUpdateDestroyAPIView):
     serializer_class = ReviewSerializer
     queryset = RestaurantReview.objects.all()

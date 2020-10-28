@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.db import models
+from app.restaurants.models import Restaurant
 
 
 class RestaurantReview(models.Model):
     restaurant_review = models.ForeignKey(
         verbose_name='restaurant_review',
         related_name='reviews',
-        to='Restaurant',
+        to=Restaurant,
         on_delete=models.CASCADE,
         blank=True,
         null=True,
@@ -28,6 +29,9 @@ class RestaurantReview(models.Model):
         on_delete=models.CASCADE,
     )
 
+    def __str__(self):
+        return f'Restaurant review from user {self.user_id}'
+
 
 class ReviewLikes(models.Model):
     user = models.ForeignKey(
@@ -41,7 +45,7 @@ class ReviewLikes(models.Model):
     review = models.ForeignKey(
         verbose_name='review_likes',
         related_name='likes',
-        to='RestaurantReview',
+        to=RestaurantReview,
         on_delete=models.CASCADE,
         blank=True,
         null=True,
@@ -70,7 +74,7 @@ class Comments_on_reviews(models.Model):
     restaurant_review = models.ForeignKey(
         verbose_name='restaurant_review',
         related_name='comments_on_review',
-        to='RestaurantReview',
+        to=RestaurantReview,
         on_delete=models.CASCADE,
     )
 
