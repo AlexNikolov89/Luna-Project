@@ -8,7 +8,7 @@ class ReviewSerializer(serializers.ModelSerializer):
     review_owner = UserSerializer(read_only=True)
     class Meta:
         model = RestaurantReview
-        fields = ['id', 'restaurant_review', 'content', 'review_owner', 'created', 'rating']
+        fields = ['id', 'restaurant_reviewed', 'content', 'review_owner', 'created', 'rating']
 
 
 class CommentsSerializer(serializers.ModelSerializer):
@@ -16,6 +16,5 @@ class CommentsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comments_on_reviews
-        fields = ['id', 'content', 'created', 'modified', 'comment_owner', 'restaurant_review',
-                  'comment_likes']
-        read_only_fields = ['id', 'created', 'comment_likes', 'modified']
+        fields = ['id', 'content', 'created', 'modified', 'comment_owner', 'restaurant_review']
+        # read_only_fields = ['created', 'modified']

@@ -4,7 +4,7 @@ from app.restaurants.models import Restaurant
 
 
 class RestaurantReview(models.Model):
-    restaurant_review = models.ForeignKey(
+    restaurant_reviewed = models.ForeignKey(
         verbose_name='restaurant_review',
         related_name='reviews',
         to=Restaurant,

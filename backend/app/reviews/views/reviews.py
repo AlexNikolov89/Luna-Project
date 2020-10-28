@@ -17,7 +17,7 @@ class ReviewCreateView(CreateAPIView):
 
     def perform_create(self, serializer):
         restaurant = Restaurant.objects.get(id=self.kwargs['restaurant_id'])
-        serializer.save(review_owner=self.request.user, restaurant_review=restaurant)
+        serializer.save(review_owner=self.request.user, restaurant_reviewed=restaurant)
 
 
 # /Get the list of the reviews for a single restaurant.
@@ -29,7 +29,7 @@ class ListReviewsSingleRestaurantView(ListAPIView):
     authentication_classes = []
 
     def get_queryset(self, **kwargs):
-        return RestaurantReview.objects.filter(restaurant_review_id=self.kwargs['restaurant_id'])
+        return RestaurantReview.objects.filter(restaurant_reviewed_id=self.kwargs['restaurant_id'])
 
 
 # /Get the list of the reviews by a single user.
