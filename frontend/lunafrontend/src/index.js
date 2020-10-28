@@ -9,6 +9,7 @@ import { Registration } from './components/Registration';
 import Homepage  from './components/homepage/Homepage';
 import SearchPage from './components/Searchpage/SearchPage';
 import ReviewsPage from './components/reviewsPage/ReviewsPage';
+import UsersPage from './components/usersPage/UsersPage'
 
 
 ReactDOM.render(
@@ -19,8 +20,9 @@ ReactDOM.render(
         <Route exact={true} path="/registration" component={Registration} />
         <Route exact={true} path="/test" component={Test} />
         <Route exact={true} path="/homepage" component={Homepage} />
-        <Route exact={true} path='/search' component={SearchPage} />
-        <Route exact={true} path='/reviews' component={ReviewsPage} />
+        <Route exact={true} path='/search/restaurants' component={SearchPage} />
+        <Route exact={true} path='/search/reviews' component={ReviewsPage} />
+        <Route exact={true} path='/search/users' component={UsersPage} />
       </Switch>
     </Router>
   </React.StrictMode>,

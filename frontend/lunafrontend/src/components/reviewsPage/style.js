@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const ReviewsContainer = styled.div `
-border: 2px solid green;
 height: 720px;
+display: grid
+grid-template-columns: repeat(4, 1fr);
+grid-gap: 30px;
 `;
 
 export const BodyContainer = styled.div `
     width: 100%;
-    height: 820px;
     background: #F2F2F2;
-    border: 2px solid blue;
 ` ;
 
 export const HorizontalLine = styled.hr `
@@ -54,6 +54,8 @@ export const ReviewCardWrapper = styled.div `
     box-sizing: border-box;
     border-radius: 3px;
     background: #FFFFFF;
+    margin-left: 134px;
+    margin-top: 57px;
 `;
 
 export const TopContainer = styled.div `
@@ -66,7 +68,7 @@ export const TopContainer = styled.div `
    h4 {
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 23px;
     color: #E47D31;
     margin-top: 10px;
@@ -92,11 +94,79 @@ export const Image = styled.div `
 `;
 
 export const ReviewContent = styled.div `
-   
+   display: block;
+   margin-left: 10px;
+
+   h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #E47D31;
+    margin-top: 14px;
+    margin-bottom: 8px;
+   }
+
+   p {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #4C4C4C;
+   }
 `;
 
-export const LikeCommentButton = styled.div ``;
+export const LikeCommentButton = styled.div `
+display:flex;
+align-items:center;
+justify-content: center;
+`;
 
-export const CommentsArea = styled.div ``;
+export const ButtonLike = styled.button `
+border: none;
+border-radius:20px 0px 0px 20px; 
+background: rgba(145, 145, 145, 0.6);
+color: white;
+height: 33px;
+width: 124px;
+`;
 
-export const CommentsInfo = styled.div ``;
+export const ButtonComment = styled.button `
+border-radius:0px 20px 20px 0px; 
+border: none;
+background: rgba(145, 145, 145, 0.6);
+color: white;
+height: 33px;
+width: 124px;
+`
+
+export const CommentsArea = styled.div `
+   display: block;
+   margin-left: 10px;
+
+   h3 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+   }
+
+   h5 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #E47D31;
+   }
+
+   p {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+   }
+
+
+`;
