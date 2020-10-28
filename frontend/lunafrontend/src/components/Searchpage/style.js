@@ -5,29 +5,35 @@ import styled from 'styled-components';
 export const BodyContainer = styled.div `
     width: 100%;
     height: 820px;
+    background: #F2F2F2;
 ` ;
 
 export const RestaurantsListing = styled.div `
-margin-top: 70px;
 display: grid
 grid-template-columns: repeat(4, 1fr);
 grid-gap: 30px;
-border: 1px solid red;
-`
+`;
+
+// export const WrappedBody = styled.div `
+
+// `
 
 
 export const HorizontalLine = styled.hr `
 border: 1px solid #D8D8D8;
 background: #D8D8D8;
 width: 630px;
+margin-top: 15px;
 `;
 
 export const TtitleContent = styled.div `
     display: flex;
-    justify-content: space-evenly;
-    text-decoration: none;
-    margin-top: 30px;
-    
+    //justify-content: space-evenly;
+    margin-top: 20px;
+    height: 54px;
+    align-items: center;
+    margin-left:405px; 
+   
 `;
 
 export const LinkPages = styled.a `
@@ -36,11 +42,12 @@ font-size: 24px;
 line-height: 28px;
 text-align: center;
 color: #4C4C4C;
+margin-left: 80px;
 
 
 &:hover {
     font-weight: bold;
-    padding-bottom: 13px;
+    padding-bottom: 20px;
     border-bottom: 3px solid #E47D31;
    }
 

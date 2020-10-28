@@ -9,9 +9,6 @@ border-radius: 3px;
 margin-left: 130px;
 margin-top: 42px;
 display-content: center;
-// display: grid;
-// grid-templeate-columns: repeat(270px 1fr),
-// grid-gap: 30px;
 `;
 
 export const TopContainer = styled.div `
