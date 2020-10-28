@@ -53,9 +53,10 @@ class CreateReviewsComments(CreateAPIView):
 class DeleteReviewsComments(DestroyAPIView):
     serializer_class = CommentsSerializer
     queryset = Comments_on_reviews.objects.all()
+    lookup_url_kwarg = 'comment_id'
 
     def get_queryset(self):
-        return self.queryset.filter(id=self.kwargs.get('pk'))
+        return self.queryset.filter(id=self.kwargs.get('comment_id'))
 
 
 # Like and Remove a Like  from a review comment
