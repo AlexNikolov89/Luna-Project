@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
+import Style from './style';
+import { Navbar } from '../Header';
+import { Footer } from '../Footer/footer';
+
 
 export const Login = () => {
     // const dispatch = useDispatch();
@@ -47,10 +51,25 @@ export const Login = () => {
 
     return (
         <>
-            <label>Email<input type="text" onChange={emailOnChangeHandler} /></label>
-            <label>Password<input type="password" onChange={passwordOnChangeHandler} /></label>
-            <button value="Login" onClick={loginHandler}>Login</button>
-            <Link to="/registration"><button>Sing Up</button></Link>
+            <Navbar />
+            <Style.ContainerLogin>
+                <Style.ContentLoginForm>
+                    <Style.ContentWriteLogin>
+                        <Style.TextLogin>LOGIN</Style.TextLogin>
+                        <Style.Line />
+                    </Style.ContentWriteLogin>
+                    <Style.ContainerInput>
+                        <Style.InputUserNameLogin type="text" placeholder="Username" onChange={emailOnChangeHandler} />
+                        <Style.InputPasswordLogin type="password" placeholder="Password" onChange={passwordOnChangeHandler} />
+                    </Style.ContainerInput>
+                    <Style.ContainerButtonLogin>
+                        <Style.ButtonLogin value="Login" onClick={loginHandler}>
+                            <Style.TextLoginButton>Login</Style.TextLoginButton>
+                        </Style.ButtonLogin>
+                    </Style.ContainerButtonLogin>
+                </Style.ContentLoginForm>
+            </Style.ContainerLogin>
+            <Footer />
         </>
 
 
