@@ -6,7 +6,7 @@ class RestaurantReview(models.Model):
     restaurant_review = models.ForeignKey(
         verbose_name='restaurant_review',
         related_name='reviews',
-        to='app.restaurants',
+        to='Restaurant',
         on_delete=models.CASCADE,
         blank=True,
         null=True,
@@ -41,7 +41,7 @@ class ReviewLikes(models.Model):
     review = models.ForeignKey(
         verbose_name='review_likes',
         related_name='likes',
-        to='app.RestaurantReview',
+        to='RestaurantReview',
         on_delete=models.CASCADE,
         blank=True,
         null=True,
@@ -67,7 +67,7 @@ class Comments_on_reviews(models.Model):
         to=settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
     )
-    restaurant_review - models.ForeignKey(
+    restaurant_review = models.ForeignKey(
         verbose_name='restaurant_review',
         related_name='comments_on_review',
         to='RestaurantReview',
@@ -88,7 +88,7 @@ class CommentLikes(models.Model):
     comment_like = models.ForeignKey(
         verbose_name='comment_like',
         related_name='liked_comment',
-        to='app.Comments_on_reviews',
+        to='Comments_on_reviews',
         on_delete=models.CASCADE,
         blank=True,
         null=True,

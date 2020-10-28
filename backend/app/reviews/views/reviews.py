@@ -12,6 +12,9 @@ class ReviewCreateView(CreateAPIView):
     serializer_class = ReviewSerializer
     queryset = RestaurantReview.objects.all()
 
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
 
 # /Get the list of the reviews for a single restaurant.
 class ListReviewsSingleRestaurantView(RetrieveAPIView):
