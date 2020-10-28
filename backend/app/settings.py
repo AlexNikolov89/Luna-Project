@@ -48,10 +48,11 @@ INSTALLED_APPS = [
     # 'django-countries',
 
     # own
+    'app.emails',
     'app.users',
     'app.registration',
     'app.restaurants',
-    'app.reviews',
+    'app.categories',
 ]
 
 MIDDLEWARE = [

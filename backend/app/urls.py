@@ -11,6 +11,7 @@ api_patterns = [
     path('restaurants/', include('app.restaurants.urls')),
     path('', include('app.reviews.urls')),
     path('users/', include('app.users.urls')),
+    path('restaurants/category/', include('app.categories.urls')),
 
     # path('docs/', include_docs_urls(title='Django Template', schema_url='/', permission_classes=[])),
 
