@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import { useDispatch } from 'react-redux'
 import {HomepageContainer, BestRestaurantsContainer} from './style'
 import Navbar from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
@@ -12,23 +13,16 @@ const Homepage = () => {
 
     const [restaurants, setRestaurants] = useState([]);
 
-    // useEffect(() => {
-    //     fetch(`${baseUrl}/api/restaurants`);
-    //         .then (res => )
-    // }[]) 
-
     return (
         <HomepageContainer>
             <Navbar />
             <SearchForm />
             <BestRatedRestaurant />
-
             <BestRestaurantsContainer>
                 {restaurants.map((restaurant) => (
-                    <Card restaurant={restaurant} key={restaurant.id}>{restaurant}</Card>
+                    <Card restaurant={restaurant} key={restaurant.id}></Card>
                 ))}
             </BestRestaurantsContainer>
-
             <FooterNavigation />
             <CopyRightFooter />
         </HomepageContainer>
