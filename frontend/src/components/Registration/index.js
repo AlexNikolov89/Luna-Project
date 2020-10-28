@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header'
 import { Footer } from '../Footer/footer'
-import { MessageRegistration } from '../MessageRegistration';
-import { Link } from 'react-router-dom';
+
 
 
 export const Registration = (props) => {
@@ -36,7 +35,7 @@ export const Registration = (props) => {
                     props.history.push("/regmessage");
                     return response.json();
                 }
-                else throw new Error("Something wrong is happening")
+                else throw new Error("Email already taken")
             })
             .then(data => {
                 console.log(data);

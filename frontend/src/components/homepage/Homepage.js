@@ -4,7 +4,8 @@ import Navbar from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import CopyRightFooter from '../footer/copyRightFooter/CopyRighFooter';
 import FooterNavigation from '../footer/footerNavigation/FooterNavigation';
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
+import Card from '../card/Card';
+import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant'
 
 const Homepage = () => {
 
@@ -18,7 +19,7 @@ const Homepage = () => {
 
             <BestRestaurantsContainer>
                 {restaurants.map((restaurant) => (
-                    <BestRatedRestaurant restaurant={restaurant} key={restaurant.id}>{restaurant}</BestRatedRestaurant>
+                    <Card restaurant={restaurant} key={restaurant.id}>{restaurant}</Card>
                 ))}
             </BestRestaurantsContainer>
 
