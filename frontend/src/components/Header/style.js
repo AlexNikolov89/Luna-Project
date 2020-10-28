@@ -5,7 +5,9 @@ export const MainContainer = styled.div`
     display:flex;
     align-items: center;
     width: 100%;
-    height: 71px;
+    height:90px;
+    // height: 71px;
+    // border:yellow 2px solid;
 `
 
 export const LogoWrapper = styled.div`
@@ -34,7 +36,8 @@ export const SinUpButton = styled.button`
     color: white;
     margin-right:1px;
     border: none;
-    border-radius:20px 0px 0px 20px; 
+    border-radius:20px 0px 0px 20px;
+    outline:none; 
     cursor: pointer;
     
 `
@@ -45,6 +48,7 @@ export const SinInButton = styled.button`
     color: white;
     border-radius:0px 20px 20px 0px; 
     border: none;
+    outline:none;
     cursor: pointer;
     
 `
@@ -56,32 +60,32 @@ export const ContainerLink = styled.div`
     height:100%;
     width:35%;
     margin-left:50%;
-    //margin-right: 62px;
+    // border:solid 2px blue;
 
 `
 
 export const LinkPages = styled.p`
-    text-decoration: none;
-    font-style: normal;
-    font-weight: normal;
+    // text-decoration: none;
+    color:black;
     font-size: 20px;
-    line-height: 23px;
-    color: #4A4A4A;
-
-   &:hover {
-    font-weight: bold;
-    padding-bottom: 13px;
-    border-bottom: 2px solid #E47D31;
-   }
+    font-weight: normal;
+    &:hover {
+        // font-weight: bold;
+    //   padding-bottom: 30px;
+      border-bottom: 3px solid #E47D31;
+      font-weight: bold;
+}
 `
 
 
 export const ContainerButton = styled.div`
     display:flex;
+    // justify-content: center;
     align-items:center;
     height:100%;
-    width:10%;
-    margin-right: 30px;
+    width:14%;
+    // margin-left:50%;
+    // border:solid 2px black;
 `
 
 // export const RightContainer = styled.div`
@@ -115,4 +119,5 @@ export const ContainerButtonLoginSignup = styled.div`
 
     height:100%;
     width:2%;
+    // border:2px solid blue;
 `

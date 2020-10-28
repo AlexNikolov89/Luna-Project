@@ -1,9 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { MainContainer, LogoWrapper, SinUpButton, SinInButton, ContainerLink, ContainerButton, LinkPages } from './style'
 
-const Navbar = () => {
-
+export const Navbar = () => {
     return (
         <MainContainer>
             <LogoWrapper>
@@ -11,13 +10,13 @@ const Navbar = () => {
             </LogoWrapper>
 
             <ContainerLink>
-                <Link style={{ textDecoration: "none" }} to='/'><LinkPages>Home</LinkPages></Link>
-                <Link style={{ textDecoration: "none" }} to='/search'><LinkPages>Search</LinkPages></Link>
-                <Link style={{ textDecoration: "none" }} to='/profile'><LinkPages>Profile</LinkPages></Link>
+                <Link style={{ textDecoration: "none" }} ><LinkPages>Home</LinkPages></Link>
+                <Link style={{ textDecoration: "none" }} ><LinkPages>Search</LinkPages></Link>
+                <Link style={{ textDecoration: "none" }} ><LinkPages>Profile</LinkPages></Link>
             </ContainerLink>
             <ContainerButton>
-                <Link to='signup'>
-                    <SinUpButton>SIGNUP</SinUpButton>
+                <Link to='/registration'>
+                    <SinUpButton >SIGNUP</SinUpButton>
                 </Link>
                 <Link to='/'>
                     <SinInButton >LOGIN</SinInButton>
@@ -27,5 +26,3 @@ const Navbar = () => {
 
     )
 }
-
-export default Navbar;
