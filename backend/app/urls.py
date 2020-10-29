@@ -6,7 +6,7 @@ from rest_framework.documentation import include_docs_urls
 
 api_patterns = [
     path('auth/', include('app.registration.urls')),
-    # path('search/', include('app.search.urls')),
+    path('search/', include('app.search.urls')),
     path('home/', include('app.home.urls')),
     path('restaurants/', include('app.restaurants.urls')),
     path('', include('app.reviews.urls')),

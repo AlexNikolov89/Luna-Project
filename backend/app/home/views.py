@@ -12,4 +12,3 @@ class HomeView(ListAPIView):
         restaurants = Restaurant.objects.all()
         top_rated_restaurants = sorted(restaurants, key=lambda restaurant: restaurant.average_rating, reverse=True)[:4]
         return top_rated_restaurants
-
