@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
 import Style from './style';
 import { Navbar } from '../Header';
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
+import { Footer } from '../Footer/footer';
 
 
-export const Login = () => {
+export const Login = (props) => {
     // const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -24,31 +21,34 @@ export const Login = () => {
         const headers = new Headers({
             "Content-type": "application/json"
         })
-        const body = JSON.stringify(email, password);
+        const body = JSON.stringify({ email: email, password: password });
         const config = {
             method: "POST",
             body: body,
             headers: headers,
         }
 
-        fetch("", config)
+        fetch("http://0.0.0.0:8000/backend/api/auth/token/", config)
             .then(response => {
                 if (response.ok) {
                     return response.json()
                 } else {
-                    throw new Error("found error in the login flow")
+                    throw new Error("Unauthorized")
                 }
             })
             .then(data => {
+                console.log("in my data", data)
                 if (data.access) {
-                    const token = token.access;
-                    this.props.history.push("/test")
+                    const token = data.access;
+                    props.history.push("/test")
                 }
             })
             .catch(error => {
                 console.log(error)
             })
     }
+
+    // console.log(email);
 
     return (
         <>
@@ -70,8 +70,7 @@ export const Login = () => {
                     </Style.ContainerButtonLogin>
                 </Style.ContentLoginForm>
             </Style.ContainerLogin>
-            <FooterNavigation />
-            <CopyRightFooter />
+            <Footer />
         </>
 
 

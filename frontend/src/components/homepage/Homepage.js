@@ -1,13 +1,11 @@
-import React, {useState, useEffect} from 'react'
-import { useDispatch } from 'react-redux'
-import {HomepageContainer, BestRestaurantsContainer} from './style'
-import {Navbar} from '../Header/index'
+import React, { useState } from 'react'
+import { HomepageContainer, BestRestaurantsContainer } from './style'
+import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
 import Card from '../card/Card';
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant'
-import baseUrl from '../../helpers/baseUrl'
+import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
+// import { Footer } from '../Footer/footer'
+
 
 const Homepage = () => {
 
@@ -31,8 +29,7 @@ const Homepage = () => {
                     <Card restaurant={restaurant} key={restaurant.id}></Card>
                 ))}
             </BestRestaurantsContainer>
-            <FooterNavigation />
-            <CopyRightFooter />
+            {/* <Footer /> */}
         </HomepageContainer>
     )
 }
