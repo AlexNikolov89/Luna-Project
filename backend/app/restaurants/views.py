@@ -46,7 +46,7 @@ class RestaurantCreateAPIView(CreateAPIView):
                                     author=self.request.user)
             restaurant.save()
         else:
-            category=Category(title=request.data["category"])
+            category = Category(title=request.data["category"])
             category.save()
             restaurant = Restaurant(category=category,
                                     name=name,

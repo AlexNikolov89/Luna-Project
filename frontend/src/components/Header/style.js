@@ -11,15 +11,11 @@ export const MainContainer = styled.div`
 `
 
 export const LogoWrapper = styled.div`
-   float: left;
-   h2 {
-       margin-left: 30px;
-       justify-content: center;
-    //    margin-top: 13px;
-       font-size: 36px;
-        line-height: 42px;
-        font-family: BradleyHandITCTT;
-   }
+    display:flex;
+    margin-left:1%;
+    height:100%;
+    width:auto;
+    // border:solid 2px blue;
 `
 
 // export const HeaderNavigation = styled.div`
@@ -120,4 +116,8 @@ export const ContainerButtonLoginSignup = styled.div`
     height:100%;
     width:2%;
     // border:2px solid blue;
+`
+
+export const LogoLuna = styled.img`
+
 `

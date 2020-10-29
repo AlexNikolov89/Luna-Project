@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import {HomepageContainer, BestRestaurantsContainer, Title, HorizontalLine} from './style'
 import {Navbar} from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
 import Card from '../card/Card';
 import {restaurantAction} from '../../store/actions/restaurantAction'
 
@@ -35,8 +33,7 @@ const Homepage = () => {
                     <Card restaurant={restaurant} key={restaurant.id}></Card>
                ))}
             </BestRestaurantsContainer>
-            <FooterNavigation />
-            <CopyRightFooter />
+            {/* <Footer /> */}
         </HomepageContainer>
     )
 }

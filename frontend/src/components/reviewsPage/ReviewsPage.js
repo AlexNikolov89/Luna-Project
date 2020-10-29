@@ -41,10 +41,9 @@ const ReviewsPage = () => {
                         <ReviewCard review={review} key={review.id} /> 
                     })}
 
-                    </ReviewsContainer>
+                </ReviewsContainer>
             </BodyContainer>
-            <FooterNavigation />
-            <CopyRightFooter />
+            <Footer />
         </Fragment>
     )
 }

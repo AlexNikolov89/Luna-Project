@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
 import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
@@ -8,8 +7,8 @@ import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
 import {authAction} from '../../store/actions/authAction'
 
 
-export const Login = () => {
-    // const dispatch = useDispatch();
+export const Login = (props) => {
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -25,31 +24,35 @@ export const Login = () => {
         const headers = new Headers({
             "Content-type": "application/json"
         })
-        const body = JSON.stringify({email: email, password: password});
+        const body = JSON.stringify({ email: email, password: password });
         const config = {
             method: "POST",
             body: body,
             headers: headers,
         }
 
-        fetch("", config)
+        fetch("http://0.0.0.0:8000/backend/api/auth/token/", config)
             .then(response => {
                 if (response.ok) {
+                    props.history.push("/test")
                     return response.json()
                 } else {
-                    throw new Error("found error in the login flow")
+                    throw new Error("Unauthorized")
                 }
             })
             .then(data => {
+                console.log("in my data", data)
                 if (data.access) {
-                    const token = token.access;
-                    this.props.history.push("/test")
+                    const token = data.access;
+                    dispatch({ type: "GET_TOKEN", payload: token })
                 }
             })
             .catch(error => {
                 console.log(error)
             })
     }
+
+    // console.log(email);
 
     return (
         <>
@@ -71,8 +74,7 @@ export const Login = () => {
                     </Style.ContainerButtonLogin>
                 </Style.ContentLoginForm>
             </Style.ContainerLogin>
-            <FooterNavigation />
-            <CopyRightFooter />
+            <Footer />
         </>
 
 

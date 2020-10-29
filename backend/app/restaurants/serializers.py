@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from app.restaurants.models import Restaurant
 from app.users.serializers import UserSerializer
+from app.reviews.models import RestaurantReview
 from django.db.models import Avg
 
 
@@ -11,16 +12,17 @@ class RestaurantSerializer(serializers.ModelSerializer):
         read_only=True
     )  # show the details of the author
 
-    # average_ratings = serializers.SerializerMethodField()
-    #
-    # def get_average_ratings(self, obj):
-    #     average = Reviews.ratings.all().aggregate(Avg('ratings')).get('scores__avg')
-    #
-    #     if average is None:
-    #         return 0
-    #     return average
+    average_rating = serializers.SerializerMethodField()
+
+    def get_average_rating(self, instance):
+        # average = RestaurantReview.objects.filter(restaurant_reviewed=instance).aggregate(rating=Avg('rating'))
+        average = Restaurant.objects.filter(id=instance.id).aggregate(rating=Avg('reviews__rating'))
+        if average is None:
+            return 0
+        return average
 
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ['id', 'name', 'category', 'street', 'city', 'zip', 'website', 'phone', 'email', 'opening_hours',
+                  'price_level', 'author', 'average_rating']
         read_only_fields = ['author']

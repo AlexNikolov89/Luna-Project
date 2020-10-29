@@ -27,7 +27,7 @@ const Restaurants = () => {
     return (
         <Fragment>
             <Navbar />
-                <SearchForm />
+            <SearchForm />
             <BodyContainer>
                     <TtitleContent>
                         <Link to='/' style={{ textDecoration: "none" }}><LinkPages>RESTAURANTS</LinkPages></Link>
@@ -41,8 +41,7 @@ const Restaurants = () => {
                          ))}
                     </RestaurantsListing>
             </BodyContainer>
-            <FooterNavigation />
-            <CopyRightFooter />
+            <Footer />
         </Fragment>
     )
 }

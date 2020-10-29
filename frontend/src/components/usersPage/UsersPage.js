@@ -17,22 +17,21 @@ const UsersPage = () => {
     return (
         <Fragment>
             <Navbar />
-                <SearchForm />
-                <BodyContainer>
+            <SearchForm />
+            <BodyContainer>
                 <TtitleContent>
                     <Link to='/search/restaurants' style={{ textDecoration: "none" }}><LinkPages>RESTAURANTS</LinkPages></Link>
                     <Link to='/search/reviews' style={{ textDecoration: "none" }}><LinkPages>REVIEWS</LinkPages></Link>
                     <Link to='/' style={{ textDecoration: "none" }}><LinkPages>USERS</LinkPages></Link>
-                 </TtitleContent>
-                 <HorizontalLine />
-                 <UsersComments>
+                </TtitleContent>
+                <HorizontalLine />
+                <UsersComments>
                     <CommentWrapper>
                         <UsersCard />
                     </CommentWrapper>
-                 </UsersComments>
-                 </BodyContainer>
-                <FooterNavigation />
-                <CopyRightFooter />
+                </UsersComments>
+            </BodyContainer>
+            <Footer />
         </Fragment>
     )
 }
