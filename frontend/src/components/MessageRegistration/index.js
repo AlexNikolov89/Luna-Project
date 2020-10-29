@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from '../Header';
 import Style from './style';
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
+import { Footer } from '../Footer/footer';
 
 
-export const MessageRegistration = () => {
 
+export const MessageRegistration = (props) => {
 
+    const handleRedirect = () => {
+        props.history.push("/verification")
+    }
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            handleRedirect()
+        }, 5000)
+
+    });
 
     return (
         <>
@@ -25,8 +34,7 @@ export const MessageRegistration = () => {
                     </Style.ContentTextRegistration>
                 </Style.ContentinerMessage>
             </Style.MainMessageRegistration>
-            <FooterNavigation />
-            <CopyRightFooter />
+            <Footer />
         </>
     )
 }
