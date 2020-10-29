@@ -4,7 +4,7 @@ import SearchForm from '../serachForm/SearchForm'
 import { ReviewsContainer, HorizontalLine, BodyContainer, ReviewCardWrapper, ButtonLike, ButtonComment } from './style'
 import { TtitleContent, LinkPages, TopContainer, ReviewContent, Image, LikeCommentButton, CommentsArea, CommentsInfo } from './style'
 import { Link } from 'react-router-dom';
-import { Footer } from '../Footer/footer'
+import { Footer } from '../footer/Footer'
 
 const ReviewsPage = () => {
     return (

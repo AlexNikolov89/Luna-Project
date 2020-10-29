@@ -29,7 +29,7 @@ export const Routes = () => {
                 <Route exact={true} path='/search' component={SearchPage} />
                 <Route exact={true} path='/search/reviews' component={ReviewsPage} />
                 <Route exact={true} path='/search/users' component={UserPage} />
-                <Route exact={true} path='/search/profile' component={UserProfile} />
+                <Route exact={true} path='/profile' component={UserProfile} />
             </Switch>
         </Router>
     )

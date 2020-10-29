@@ -3,7 +3,7 @@ import { Navbar } from '../Header/index'
 import SearchForm from '../serachForm/SearchForm';
 import { Link } from 'react-router-dom'
 import { TtitleContent, CommentWrapper, Text, Image, TopContainer, LinkPages, BodyContainer, HorizontalLine, UsersComments } from './style'
-import { Footer } from '../Footer/footer';
+import { Footer } from '../footer/Footer';
 
 const UsersPage = () => {
     return (

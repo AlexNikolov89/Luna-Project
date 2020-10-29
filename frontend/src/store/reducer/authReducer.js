@@ -1,7 +1,7 @@
 import { GET_USER, USER_LOGIN, USER_LOGOUT } from '../actions/actionTypes';
 
 const initialState = {
-    token: null,
+    token: localStorage.getItem("token"),
     user: null,
   };
   
@@ -9,6 +9,7 @@ const initialState = {
     switch (action.type) {
       case USER_LOGIN: {
         const token = action.payload;
+        localStorage.setItem("token", token);
         console.log('in authReducer, token: ', token);
         return { ...state, token: token };
       }
