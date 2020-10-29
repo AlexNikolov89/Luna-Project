@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import {useDispatch} from 'react-redux'
 import { Navbar } from '../Header/index';
-import { BodyContainer, WrappedBody, HorizontalLine, TtitleContent, LinkPages, RestaurantsListing } from './style'
+import { BodyContainer, HorizontalLine, TtitleContent, LinkPages } from './style'
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
-import { Footer } from '../footer/footer';
-import {restaurantAction} from '../../store/actions/restaurantAction';
+import { Footer } from '../footer/Footer';
+import { AllRestaurants } from '../restaurant/AllRestaurants';
 
 
 const Restaurants = () => {
@@ -33,11 +33,7 @@ const Restaurants = () => {
                     <Link to='/search/users' style={{ textDecoration: "none" }}><LinkPages>USERS</LinkPages></Link>
                 </TtitleContent>
                 <HorizontalLine />
-                <RestaurantsListing>
-                    {restaurants.map((restaurant) => {
-                        <Card restaurant={restaurant} key={restaurant.id} />
-                    })}
-                </RestaurantsListing>
+                <AllRestaurants />
             </BodyContainer>
             <Footer />
         </Fragment>

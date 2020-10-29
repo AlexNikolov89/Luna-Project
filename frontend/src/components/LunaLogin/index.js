@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../footer/footer';
+import { Footer } from '../footer/Footer';
+import { USER_LOGIN } from '../../store/actions/actionTypes';
 
 
 export const Login = (props) => {
@@ -32,7 +33,6 @@ export const Login = (props) => {
         fetch("http://0.0.0.0:8000/backend/api/auth/token/", config)
             .then(response => {
                 if (response.ok) {
-                    props.history.push("/test")
                     return response.json()
                 } else {
                     throw new Error("Unauthorized")
@@ -42,7 +42,9 @@ export const Login = (props) => {
                 console.log("in my data", data)
                 if (data.access) {
                     const token = data.access;
-                    dispatch({ type: "GET_TOKEN", payload: token })
+                    dispatch({ type: USER_LOGIN, payload: token })
+
+                    props.history.push("/search")
                 }
             })
             .catch(error => {

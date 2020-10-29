@@ -1,17 +1,19 @@
 import baseUrl from '../../helpers/baseUrl'
+import { GET_RESTAURANTS } from './actionTypes';
 
-export const restaurantAction = () => async (dispatch, getState) => {
-    const url = `${baseUrl}/backend/api/restaurants/`;
-    //console.log(url)
-    const config = {
-        method: 'GET',
-        headers: new Headers ({
-            'Content-Type': 'application/json',
+export const getAllRestaurantsAction = (dispatch, getState) => {
+    const token = getState().auth.token;
+    fetch(`${baseUrl}/backend/api/restaurants/`, {
+        headers: new Headers({
+            Authorization: `Bearer ${token}`,
         }),
-    }
-    const response = await fetch(url, config);
-    console.log(response);
-    const data = await response.json();
-    console.log(data);
-    return data;
-}
+    })
+        .then((r) => r.json())
+        .then((restaurants) => {
+            console.log("restaurants", restaurants);
+            dispatch({
+                type: GET_RESTAURANTS,
+                payload: restaurants,
+            });
+        });
+};

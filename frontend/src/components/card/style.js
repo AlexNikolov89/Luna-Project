@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const RestaurantWrapper = styled.div `
+float: left;
 border: 2px solid blue;
 width: 270px;
 height: 410px;
@@ -9,6 +10,10 @@ border-radius: 3px;
 margin-left: 130px;
 margin-top: 42px;
 display-content: center;
+
+img {
+    width: 100%;
+}
 `;
 
 export const TopContainer = styled.div `
