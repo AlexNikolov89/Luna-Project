@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header'
-import { Footer } from '../Footer/footer'
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
 
 
 
@@ -63,7 +64,8 @@ export const Registration = (props) => {
                     </Style.DivButtonRegister>
                 </Style.ContainerRegistrationForm>
             </Style.MainContainerRegistration>
-            <Footer />
+            <FooterNavigation />
+            <CopyRightFooter />
         </>
     )
 }

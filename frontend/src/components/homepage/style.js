@@ -6,5 +6,5 @@ width: 100%;
 `;
 
 export const BestRestaurantsContainer = styled.div `
-    
+   
 `
