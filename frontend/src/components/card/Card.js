@@ -2,13 +2,13 @@ import React from 'react'
 import Star from '../../images/svg/star.svg'
 import { RestaurantWrapper, TopContainer, RatingContent } from './style'
 
-const Card = () => {
+const Card = ({restaurant}) => {
     // if (props.restaurant === undefined) return null
     return (
         <RestaurantWrapper>
             <TopContainer>
-                <p>Restaurant Name</p>
-                <p>Address</p>
+                <p>{restaurant.name}</p>
+                <p>{restaurant.street}</p>
                 <RatingContent>
                     <img src={Star} />
                     <img src={Star} />
@@ -18,7 +18,7 @@ const Card = () => {
                     <p>0</p>
                 </RatingContent>
             </TopContainer>
-            <image />
+            <image>{restaurant.image}</image>
         </RestaurantWrapper>
     )
 }

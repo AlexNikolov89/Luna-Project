@@ -1,2 +1,5 @@
+export const GET_TOKEN = 'GET_TOKEN';
+
 export const GET_RESTAURANTS = 'GET_RESTAURANTS';
 export const CREATE_NEW_RESTAURANT = 'CREATE_NEW_RESTAURANT';
+

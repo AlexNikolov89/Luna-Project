@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {Navbar} from '../Header/index'
 import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
 import FooterNavigation from '../Footer/footerNavigation/FooterNavigation'
@@ -6,8 +6,25 @@ import SearchForm from '../serachForm/SearchForm'
 import {ReviewsContainer, HorizontalLine, BodyContainer, ReviewCardWrapper, ButtonLike, ButtonComment} from './style'
 import {TtitleContent, LinkPages, TopContainer, ReviewContent, Image, LikeCommentButton, CommentsArea, CommentsInfo} from './style'
 import {Link} from 'react-router-dom';
+import {useDispatch } from 'react-redux'
+import {reviewAction} from '../../store/actions/reviewsAction'
+import ReviewCard from '../reviewCard/ReviewCard'
 
 const ReviewsPage = () => {
+
+    const [reviwes, setReviews] = useState([]);
+    const dispatch = useDispatch(); 
+
+    useEffect(() => {
+        const getData = async () => {
+            const data = await dispatch(reviewAction());
+            console.log(data);
+            setReviews(data);
+        };
+        getData();
+    }, []);
+
+
     return (
         <Fragment>
             <Navbar />
@@ -20,27 +37,9 @@ const ReviewsPage = () => {
                     </TtitleContent>
                     <HorizontalLine />
                     <ReviewsContainer>
-
-                    <ReviewCardWrapper>
-                    <TopContainer>
-                        <Image>IMG</Image>
-                        <h4>Name and Surname</h4>
-                        <p>Reviews in total</p>
-                    </TopContainer>
-                        <ReviewContent>
-                            <h5>Customer Name</h5>
-                            <p>Review Text......</p>
-                        </ReviewContent>
-                        <LikeCommentButton>
-                            <ButtonLike>Like 0</ButtonLike>
-                            <ButtonComment>Comment 0</ButtonComment>
-                        </LikeCommentButton>
-                        <CommentsArea>
-                            <h3>Latest Comments</h3>
-                            <h5>User Name</h5>
-                            <p>Comment......</p>
-                        </CommentsArea>
-                        </ReviewCardWrapper>
+                    {reviwes && reviwes.map((review) => {
+                        <ReviewCard review={review} key={review.id} /> 
+                    })}
 
                     </ReviewsContainer>
             </BodyContainer>

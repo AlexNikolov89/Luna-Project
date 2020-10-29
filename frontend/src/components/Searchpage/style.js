@@ -9,9 +9,14 @@ export const BodyContainer = styled.div `
 ` ;
 
 export const RestaurantsListing = styled.div `
-display: grid
-grid-template-columns: repeat(4, 1fr);
-grid-gap: 30px;
+display: flex;
+	justify-content: space-between;
+	height: 60px;
+	width: 100%;
+
+// display: grid
+// grid-template-columns: repeat(4, 1fr);
+// grid-gap: 30px;
 `;
 
 // export const WrappedBody = styled.div `

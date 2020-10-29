@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {Navbar} from '../Header/index';
 import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
 import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
@@ -6,9 +6,24 @@ import { BodyContainer , WrappedBody, HorizontalLine, TtitleContent, LinkPages, 
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import {Link} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import {restaurantAction} from '../../store/actions/restaurantAction'
 
 
 const Restaurants = () => {
+
+    const [restaurants, setRestaurants] = useState([]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const getData = async () => {
+            const data = await dispatch(restaurantAction());
+            console.log(data);
+            setRestaurants(data);
+        };
+        getData();
+    }, []);
+
     return (
         <Fragment>
             <Navbar />
@@ -21,7 +36,9 @@ const Restaurants = () => {
                     </TtitleContent>
                     <HorizontalLine />
                     <RestaurantsListing>
-                        <Card />
+                        {restaurants && restaurants.map((restaurant) => (
+                             <Card restaurant={restaurant} key={restaurant.id}></Card>
+                         ))}
                     </RestaurantsListing>
             </BodyContainer>
             <FooterNavigation />

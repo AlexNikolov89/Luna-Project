@@ -38,3 +38,30 @@ export const Button = styled.button `
 
     
 `
+
+export const Dropdown = styled.div `
+    margin-top: 30px;
+    background: white;
+    width: 100%;
+    p {
+
+        color: black;
+        transition: linear 0.10s;
+        display: block;
+    }
+   
+`;
+
+export const ButtonNew = styled.div `
+width: 50px;
+height: 52px;
+border: 1px solid #D8D8D8;
+background: #FFFFFF;
+display: flex;
+justify-content: center;
+font-size: bold;
+
+&:hover {
+    cursor: pointer;
+}
+`

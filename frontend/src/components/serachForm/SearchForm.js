@@ -1,22 +1,32 @@
-import React, {Fragment, useState} from 'react'
-import {FormWrapper, SearchBox, DropDownButton, Button, Input } from './style'
+import React, {Fragment, useState, useEffect} from 'react'
+import {FormWrapper, Dropdown, SearchBox, DropDownButton, Button, Input, ButtonNew } from './style'
 import ArrowIcon from '../../images/svg/arrow.svg'
+
 
 const SearchForm = () => {
 
-    const [open, setOpen] = useState(false);
-    const [select, setSelect] = useState([]);
+    const [isActive, setIsActive] = useState(false);
+    const onClick = () => setIsActive(!isActive);
+
 
     return (
         <Fragment>
             <FormWrapper>
                 <Input type='text' placeholder='Search' />
-                <Button>
+                <Button onClick={onClick}>
                     <span>Select a category...</span>
-                    <img src={ArrowIcon} onClick={() => setOpen(!open)} />
-                    {/*<DropDown>
-                     </DropDown>*/}
+                    <img src={ArrowIcon} />
+
+                    {isActive ? (
+                     <Dropdown>
+                            <p>Japanse Food</p>
+                            <p>Korean Food</p>
+                            <p>Italian Food</p>
+                            <p>Spanish Food</p>
+                     </Dropdown>
+                     ) : null}
                 </Button>
+                <ButtonNew><p>+</p></ButtonNew>
             </FormWrapper>
         </Fragment>
     )

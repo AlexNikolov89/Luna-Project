@@ -1,35 +1,39 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux'
-import {HomepageContainer, BestRestaurantsContainer} from './style'
+import {HomepageContainer, BestRestaurantsContainer, Title, HorizontalLine} from './style'
 import {Navbar} from '../Header/index'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
 import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
 import Card from '../card/Card';
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant'
-import baseUrl from '../../helpers/baseUrl'
+import {restaurantAction} from '../../store/actions/restaurantAction'
+
+
 
 const Homepage = () => {
 
     const [restaurants, setRestaurants] = useState([]);
+    const dispatch = useDispatch();
 
-    // const useEffect = () => {
-    //     fetch(`${baseUrl}/backend/api/restaurants/`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //     })
-    // }
+    useEffect(() => {
+        const getData = async () => {
+            const data = await dispatch(restaurantAction());
+            console.log(data);
+            setRestaurants(data);
+        };
+        getData();
+    }, []);
 
     return (
         <HomepageContainer>
             <Navbar />
             <SearchForm />
-            <BestRatedRestaurant />
+            <Title>BEST RATED RESTAURANT</Title>
+            <HorizontalLine />
             <BestRestaurantsContainer>
-                {restaurants.map((restaurant) => (
+               {restaurants && restaurants.map((restaurant) => (
                     <Card restaurant={restaurant} key={restaurant.id}></Card>
-                ))}
+               ))}
             </BestRestaurantsContainer>
             <FooterNavigation />
             <CopyRightFooter />

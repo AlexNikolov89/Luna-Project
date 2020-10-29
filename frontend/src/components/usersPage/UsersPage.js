@@ -1,12 +1,19 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {Navbar} from '../Header/index'
 import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
 import FooterNavigation from '../Footer/footerNavigation/FooterNavigation'
 import SearchForm from '../serachForm/SearchForm';
 import {Link} from 'react-router-dom'
 import {TtitleContent, CommentWrapper, Text, Image, TopContainer, LinkPages, BodyContainer, HorizontalLine, UsersComments } from './style'
+import UsersCard from '../usersCard/UsersCard';
+import {useDispatch} from 'react-redux'
+
 
 const UsersPage = () => {
+
+
+    
+
     return (
         <Fragment>
             <Navbar />
@@ -20,14 +27,7 @@ const UsersPage = () => {
                  <HorizontalLine />
                  <UsersComments>
                     <CommentWrapper>
-                        <TopContainer>
-                            <Image>IMG</Image>
-                            <h4>Name and Surname</h4>
-                            <p>Reviews in total</p>
-                        </TopContainer>
-                        <Text>
-                            <p>Comment Text...</p>
-                        </Text>
+                        <UsersCard />
                     </CommentWrapper>
                  </UsersComments>
                  </BodyContainer>
