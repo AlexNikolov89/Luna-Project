@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../Footer/footer';
+import { Footer } from '../footer/footer';
 
 export const Verification = (props) => {
     const [email, setEmail] = useState("");

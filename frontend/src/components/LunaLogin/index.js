@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
-import {authAction} from '../../store/actions/authAction'
+import { Footer } from '../footer/footer';
 
 
 export const Login = (props) => {

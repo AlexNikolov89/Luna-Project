@@ -1,7 +1,6 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import {Navbar} from '../Header/index';
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
+import {Footer} from '../footer/footer.js'
 import { BodyContainer , WrappedBody, HorizontalLine, TtitleContent, LinkPages, RestaurantsListing} from './style'
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'

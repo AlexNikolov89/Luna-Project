@@ -1,7 +1,6 @@
 import React, {Fragment, useState, useEffect} from 'react'
 import {Navbar} from '../Header/index'
-import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter'
-import FooterNavigation from '../Footer/footerNavigation/FooterNavigation'
+import {Footer} from '../footer/footer.js'
 import SearchForm from '../serachForm/SearchForm';
 import {Link} from 'react-router-dom'
 import {TtitleContent, CommentWrapper, Text, Image, TopContainer, LinkPages, BodyContainer, HorizontalLine, UsersComments } from './style'
