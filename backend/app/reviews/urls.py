@@ -21,7 +21,7 @@ review_patterns = [
 comment_patterns = [
     path('<int:user_id>/', UserComments.as_view()),
     path('new/<int:review_id>/', CreateReviewsComments.as_view()),
-    path('<int:comment_id>/', DeleteReviewsComments.as_view()),
+    path('remove/<int:comment_id>/', DeleteReviewsComments.as_view()),
 ]
 
 
