@@ -38,7 +38,6 @@ export const Verification = (props) => {
     const handleFinishRegistration = () => {
 
         const body = JSON.stringify({ email: email, code: validationCode, first_name: repeatPassword, last_name: location, username: username, password: password, })
-        console.log("in my body", body)
         const headers = new Headers({
             "Content-type": "application/json"
         })
@@ -52,19 +51,19 @@ export const Verification = (props) => {
         fetch("http://0.0.0.0:8000/backend/api/auth/registration/validate/", config)
             .then(response => {
                 if (response.ok) {
+                    props.history.push("/")
                     return response.json();
                 } else throw new Error("validation not done")
             })
             .then(data => {
                 console.log("in data respone", data);
-                props.history.push("/test")
             })
             .catch(error => {
                 console.log(error)
             })
     }
 
-    console.log(repeatPassword);
+    // console.log(repeatPassword);
     return (
         <>
             <Navbar />
@@ -85,8 +84,8 @@ export const Verification = (props) => {
                         <Style.ContentFormRightSide>
                             <Style.ContainerInputFieldsRight>
                                 <Style.InputVerificationCode type="text" placeholder="Validation code" onChange={handleValidationCode} />
-                                <Style.InputLocationVerification type="text" placeholder="Location" onChange={handleLocation} />
-                                <Style.InputPswRepeatVerification type="text" placeholder="Password repeat" onChange={handleRepeatPassword} />
+                                <Style.InputLocationVerification type="text" placeholder="Last Name" onChange={handleLocation} />
+                                <Style.InputPswRepeatVerification type="text" placeholder="First Name" onChange={handleRepeatPassword} />
                             </Style.ContainerInputFieldsRight>
                         </Style.ContentFormRightSide>
                     </Style.ContentForm>
