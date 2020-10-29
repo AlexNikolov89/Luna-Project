@@ -10,6 +10,7 @@ import SearchPage from '../components/Searchpage/SearchPage';
 import ReviewsPage from '../components/reviewsPage/ReviewsPage';
 import UserPage from '../components/usersPage/UsersPage';
 import { CreateNewRestaurant } from '../components/CreateNewRestaurant';
+import { UserProfile } from '../components/UserProfile/UserProfile';
 
 export const Routes = () => {
     return (
@@ -28,6 +29,7 @@ export const Routes = () => {
                 <Route exact={true} path='/search' component={SearchPage} />
                 <Route exact={true} path='/search/reviews' component={ReviewsPage} />
                 <Route exact={true} path='/search/users' component={UserPage} />
+                <Route exact={true} path='/search/profile' component={UserProfile} />
             </Switch>
         </Router>
     )

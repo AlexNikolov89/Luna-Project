@@ -1,23 +1,28 @@
 import React from 'react'
 import Star from '../../images/svg/star.svg'
+import StarYellow from '../../images/svg/star_yellow.svg'
 import { RestaurantWrapper, TopContainer, RatingContent } from './style'
 
-const Card = () => {
-    // if (props.restaurant === undefined) return null
+const Rating = (props) => {
+    return (<RatingContent>
+        <img src={props.rating >= 1 ? StarYellow : Star}/>
+        <img src={props.rating >= 2 ? StarYellow : Star}/>
+        <img src={props.rating >= 3 ? StarYellow : Star}/>
+        <img src={props.rating >= 4 ? StarYellow : Star}/>
+        <img src={props.rating >= 5 ? StarYellow : Star}/>
+    </RatingContent>);
+};
+
+const Card = (props) => {
+    const restaurant = props.restaurant;
     return (
         <RestaurantWrapper>
             <TopContainer>
-                <p>Restaurant Name</p>
-                <p>Address</p>
-                <RatingContent>
-                    <img src={Star} />
-                    <img src={Star} />
-                    <img src={Star} />
-                    <img src={Star} />
-                    <img src={Star} />
-                    <p>0</p>
-                </RatingContent>
+                <p>{restaurant.name}</p>
+                <p>{restaurant.street}<br/></p> 
+                <Rating rating={restaurant.average_rating} />
             </TopContainer>
+            <img src={restaurant.image} alt={restaurant.name} />
             <image />
         </RestaurantWrapper>
     )

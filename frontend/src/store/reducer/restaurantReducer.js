@@ -1,13 +1,14 @@
 import {GET_RESTAURANTS, CREATE_NEW_RESTAURANT} from '../actions/actionTypes';
 
-// const initialState = {
-//     restaurants: [],
-// }
+const initialState = {
+    all_restaurants: null
+};
 
-// export default restaurantReducer = (state=initialState, action) {
-//     switch(action.type) {
-//         case GET_RESTAURANTS:{
-//             return {...state, restaurants: [...state.restaurant, action.payload]}
-//         }
-//     }
-// }
+export const restaurantReducer = (state = initialState, action) => {
+    switch(action.type) {
+        case GET_RESTAURANTS: {
+            return {...state, all_restaurants: [...action.payload]}
+        }
+    }
+    return {...state};
+}
