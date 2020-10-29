@@ -20,14 +20,7 @@ font-style: normal;
         justify-content: center;
         color: #D8D8D8;
         padding-left: 30px;
-`
-
-
-//     input[type='text'] {
-//         width: 1150px;
-//         
-// }
-// `
+`;
 
 export const Button = styled.button `
     width: 300px;

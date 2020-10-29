@@ -1,7 +1,8 @@
 import React from 'react';
 import { Navbar } from '../Header';
 import Style from './style';
-import { Footer } from '../Footer/footer';
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
 
 
 export const MessageRegistration = () => {
@@ -24,7 +25,8 @@ export const MessageRegistration = () => {
                     </Style.ContentTextRegistration>
                 </Style.ContentinerMessage>
             </Style.MainMessageRegistration>
-            <Footer />
+            <FooterNavigation />
+            <CopyRightFooter />
         </>
     )
 }

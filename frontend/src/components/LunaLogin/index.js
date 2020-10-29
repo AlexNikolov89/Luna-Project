@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../Footer/footer';
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
 
 
 export const Login = () => {
@@ -69,7 +70,8 @@ export const Login = () => {
                     </Style.ContainerButtonLogin>
                 </Style.ContentLoginForm>
             </Style.ContainerLogin>
-            <Footer />
+            <FooterNavigation />
+            <CopyRightFooter />
         </>
 
 

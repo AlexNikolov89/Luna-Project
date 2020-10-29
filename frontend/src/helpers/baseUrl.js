@@ -6,4 +6,4 @@ if(process.env.NODE_ENV === 'development'){
     baseUrl = 'http://taurus-luna.propulsion-learn.ch/'
 }
 
-export default baseUrl
+export default baseUrl;

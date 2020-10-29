@@ -3,22 +3,23 @@ import Star from '../../images/svg/star.svg'
 import { RestaurantWrapper, TopContainer, RatingContent } from './style'
 
 const Card = () => {
+    // if (props.restaurant === undefined) return null
     return (
         <RestaurantWrapper>
-                <TopContainer>
-                    <p>Restaurant Name</p>
-                    <p>Address</p>
-                    <RatingContent>
-                        <img src={Star} />
-                        <img src={Star} />
-                        <img src={Star} />
-                        <img src={Star} />
-                        <img src={Star} />
-                        <p>0</p>
-                    </RatingContent>
-                </TopContainer>
-                <image />
-            </RestaurantWrapper>
+            <TopContainer>
+                <p>Restaurant Name</p>
+                <p>Address</p>
+                <RatingContent>
+                    <img src={Star} />
+                    <img src={Star} />
+                    <img src={Star} />
+                    <img src={Star} />
+                    <img src={Star} />
+                    <p>0</p>
+                </RatingContent>
+            </TopContainer>
+            <image />
+        </RestaurantWrapper>
     )
 }
 
