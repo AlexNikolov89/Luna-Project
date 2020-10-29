@@ -4,7 +4,7 @@ import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import Card from '../card/Card';
 import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
-// import { Footer } from '../Footer/footer'
+// import { Footer } from '../footer/footer'
 
 
 const Homepage = () => {
