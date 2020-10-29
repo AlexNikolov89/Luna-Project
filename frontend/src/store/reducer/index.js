@@ -5,7 +5,7 @@ import { restaurantReducer } from '../reducer/restaurantReducer';
 const reducers = combineReducers({
     profile: profileReducer,
     restaurants: restaurantReducer
-    auth: // @Stefan: Could you add a login reducer here?
+    //auth: // @Stefan: Could you add a login reducer here?
 });
 export default reducers
 
