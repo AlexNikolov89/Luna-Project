@@ -16,8 +16,7 @@ class MyUserProfile(RetrieveUpdateAPIView):
     def get_object(self):
         self.kwargs['pk'] = self.request.user.id
         obj = super().get_object()
-        return obj.user_profile
-
+        return obj
 
 # list all users
 class ListUsers(ListAPIView):
