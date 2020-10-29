@@ -4,6 +4,7 @@ import Card from '../card/Card'
 
 
 const BestRatedRestaurant = ({restaurant}) => {
+    
     return (
         <BodyContainer>
             <Title>BEST RATED RESTAURANT</Title>

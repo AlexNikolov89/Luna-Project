@@ -1,7 +1,8 @@
 import React from 'react';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../Footer/footer';
+import CopyRightFooter from '../Footer/copyRightFooter/CopyRighFooter';
+import FooterNavigation from '../Footer/footerNavigation/FooterNavigation';
 
 export const Verification = () => {
 
@@ -35,7 +36,8 @@ export const Verification = () => {
                     </Style.ContentButtonFinishVerification>
                 </Style.ContainerVerificationForm>
             </Style.MainVerification>
-            <Footer />
+            <FooterNavigation />
+            <CopyRightFooter />
         </>
     )
 }
