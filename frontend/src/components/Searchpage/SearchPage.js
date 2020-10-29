@@ -4,7 +4,7 @@ import { BodyContainer, WrappedBody, HorizontalLine, TtitleContent, LinkPages, R
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
-import { Footer } from '../footer/footer';
+import { Footer } from '../Footer/footer';
 
 
 const Restaurants = () => {

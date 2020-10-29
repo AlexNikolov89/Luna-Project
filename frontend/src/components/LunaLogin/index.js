@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../footer/footer';
+import { Footer } from '../Footer/footer';
 
 
 export const Login = (props) => {
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -31,6 +32,7 @@ export const Login = (props) => {
         fetch("http://0.0.0.0:8000/backend/api/auth/token/", config)
             .then(response => {
                 if (response.ok) {
+                    props.history.push("/test")
                     return response.json()
                 } else {
                     throw new Error("Unauthorized")
@@ -40,7 +42,7 @@ export const Login = (props) => {
                 console.log("in my data", data)
                 if (data.access) {
                     const token = data.access;
-                    props.history.push("/test")
+                    dispatch({ type: "GET_TOKEN", payload: token })
                 }
             })
             .catch(error => {
