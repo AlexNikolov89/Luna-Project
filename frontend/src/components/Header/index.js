@@ -11,9 +11,9 @@ export const Navbar = () => {
             </LogoWrapper>
 
             <ContainerLink>
-                <Link style={{ textDecoration: "none" }} ><LinkPages>Home</LinkPages></Link>
-                <Link style={{ textDecoration: "none" }} ><LinkPages>Search</LinkPages></Link>
-                <Link style={{ textDecoration: "none" }} ><LinkPages>Profile</LinkPages></Link>
+                <Link to='/' style={{ textDecoration: "none" }} ><LinkPages>Home</LinkPages></Link>
+                <Link to='/search' style={{ textDecoration: "none" }} ><LinkPages>Search</LinkPages></Link>
+                <Link to='profile' style={{ textDecoration: "none" }} ><LinkPages>Profile</LinkPages></Link>
             </ContainerLink>
             <ContainerButton>
                 <Link to='/registration'>

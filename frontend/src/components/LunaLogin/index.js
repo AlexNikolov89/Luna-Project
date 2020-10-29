@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
 import Style from './style';
 import { Navbar } from '../Header';
 import { Footer } from '../Footer/footer';
