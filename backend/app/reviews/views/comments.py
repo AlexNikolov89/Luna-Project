@@ -10,9 +10,10 @@ from app.reviews.serializers import CommentsSerializer
 class UserComments(ListAPIView):
     serializer_class = CommentsSerializer
     queryset = Comments_on_reviews.objects.all()
+    lookup_url_kwarg = 'user_id'
 
     def get_queryset(self):
-        return self.queryset.filter(comment_owner__id=self.kwargs.get('pk'))
+        return self.queryset.filter(comment_owner__id=self.kwargs.get('user_id'))
 
 
 # making a new comment
