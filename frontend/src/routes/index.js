@@ -21,7 +21,7 @@ export const Routes = () => {
                 <Route exact={true} path="/regmessage" component={MessageRegistration} />
                 <Route exact={true} path="/verification" component={Verification} />
                 <Route exact={true} path="/regmessage" component={MessageRegistration} />
-                <Route exact={true} path="/test" component={Test} />
+                {/* <Route exact={true} path="/test" component={Test} /> */}
                 <Route exact={true} path="/createnewresturant" component={CreateNewRestaurant} />
 
                 {/* <Route exact={true} path="/homepage" component={Homepage} /> */}
