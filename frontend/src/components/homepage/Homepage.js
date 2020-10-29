@@ -4,7 +4,7 @@ import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import Card from '../card/Card';
 import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
-// import { Footer } from '../footer/footer'
+import { Footer } from '../footer/footer'
 
 
 const Homepage = () => {
@@ -29,7 +29,7 @@ const Homepage = () => {
                     <Card restaurant={restaurant} key={restaurant.id}></Card>
                 ))}
             </BestRestaurantsContainer>
-            {/* <Footer /> */}
+            <Footer />
         </HomepageContainer>
     )
 }

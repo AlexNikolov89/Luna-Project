@@ -42,4 +42,9 @@ export const GoogleButton = styled.img`
 `
 export const InstagramButton = styled.img`
     cursor:pointer;
+`;
+
+export const SectionDown = styled.div `
+    display: flex;
+    justify-content: center;
 `

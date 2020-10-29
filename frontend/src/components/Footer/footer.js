@@ -1,5 +1,5 @@
 import React from 'react';
-import { FooterContainer, SectionUp, LeftSide, RightSide, TwitterButton, FacebookButton, GoogleButton, InstagramButton } from './style';
+import { FooterContainer, SectionUp, LeftSide, RightSide, TwitterButton, FacebookButton, GoogleButton, InstagramButton, SectionDown } from './style';
 import TWITTER from '../../images/svg/twitter.svg';
 import FB from '../../images/svg/facebook.svg';
 import GOOGLE from '../../images/svg/googleplus.svg';
@@ -24,6 +24,9 @@ export const Footer = () => {
                     <InstagramButton src={INSTAGRAM}></InstagramButton>
                 </RightSide>
             </SectionUp>
+            <SectionDown>
+            © Copyright Luna 2018
+            </SectionDown>
         </FooterContainer>
     )
 }

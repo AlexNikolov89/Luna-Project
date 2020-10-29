@@ -38,3 +38,35 @@ export const Button = styled.button `
 
     
 `
+export const Dropdown = styled.div `
+border: 1px solid #D8D8D8;
+    margin-top: 27px;
+    width: 100%;
+    background: white;
+
+    p {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+        justify-content: center;
+        color: #D8D8D8;
+
+    }
+
+    p:hover {
+        text-decoration:underline;
+        color: black;
+    }
+`;
+
+export const ButtonUsersProfile = styled.div `
+    width: 60px;
+    border: 1px solid #D8D8D8;
+    height: 52px;
+
+    p {
+        display: flex;
+    justify-content: center;
+    font-size: 20px;
+    }
+`
