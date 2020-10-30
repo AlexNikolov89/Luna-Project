@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Homepage from '../components/Homepage/Homepage';
+import Homepage from '../components/Homepage/Homepage.js';
 import { Login } from '../components/LunaLogin';
 import { Registration } from '../components/Registration';
 import { Verification } from '../components/Verification';
