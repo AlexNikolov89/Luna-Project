@@ -45,7 +45,7 @@ export const Login = (props) => {
                     const token = data.access;
                     dispatch({ type: USER_LOGIN, payload: token })
 
-                    props.history.push("/search")
+                    props.history.push("/homepage")
                 }
             })
             .catch(error => {
