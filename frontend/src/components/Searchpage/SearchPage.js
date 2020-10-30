@@ -4,7 +4,7 @@ import { BodyContainer, HorizontalLine, TtitleContent, LinkPages } from './style
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
-import { Footer } from '../footer/footer';
+import Footer from '../footer/footer';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
 import { AllRestaurants } from '../restaurant/AllRestaurants';
 
