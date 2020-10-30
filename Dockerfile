@@ -29,11 +29,11 @@ RUN mkdir -p /static-files
 
 COPY ./backend /backend
 
-#WORKDIR /frontend_tmp
-#
-#COPY ./frontend/package.json /frontend_tmp
-#RUN npm install
-#COPY ./frontend /frontend_tmp
-#RUN npm run build
+WORKDIR /frontend_tmp
+
+COPY ./frontend/package.json /frontend_tmp
+RUN npm install
+COPY ./frontend /frontend_tmp
+RUN npm run build
 
 WORKDIR /backend
