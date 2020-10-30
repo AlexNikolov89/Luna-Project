@@ -1,4 +1,4 @@
-FROM continuumio/miniconda:latest
+FROM continuumio/miniconda3:latest
 
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -qqy \
     bzip2 \
     graphviz
 
-RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && apt-get install -y nodejs && apt-get install -y npm
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash - && apt-get install -y nodejs && apt-get install -y npm && npm i npm@latest -g
 
 COPY ./backend/requirements.yml /backend/requirements.yml
 
@@ -27,8 +27,6 @@ RUN mkdir -p /frontend_tmp
 RUN mkdir -p /media-files
 RUN mkdir -p /static-files
 
-COPY ./backend /backend
-
 WORKDIR /frontend_tmp
 
 COPY ./frontend/package.json /frontend_tmp
@@ -36,4 +34,5 @@ RUN npm install
 COPY ./frontend /frontend_tmp
 RUN npm run build
 
+COPY ./backend /backend
 WORKDIR /backend
