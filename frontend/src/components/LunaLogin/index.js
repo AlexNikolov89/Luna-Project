@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
-import Footer from '../footer';
+import Footer from '../footer/index';
 import { USER_LOGIN } from '../../store/actions/actionTypes';
 import baseUrl from '../../helpers/baseUrl'
 

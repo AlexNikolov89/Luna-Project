@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header';
-import Footer from '../footer';
+import Footer from '../footer/index';
 import baseUrl from '../../helpers/baseUrl'
 
 export const Verification = (props) => {

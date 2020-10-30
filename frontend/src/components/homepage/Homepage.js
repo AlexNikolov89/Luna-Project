@@ -3,9 +3,9 @@ import React, {useEffect} from "react";
 import { HomepageContainer, BestRestaurantsContainer } from './style'
 import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
+//import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
-import Footer from '../footer';
+import Footer from '../footer/index';
 import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
