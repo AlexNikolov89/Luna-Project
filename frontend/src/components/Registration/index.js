@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header'
-import Footer from '../footer/footer.js';
+import Footer from '../footer';
 import baseUrl from '../../helpers/baseUrl'
 
 
