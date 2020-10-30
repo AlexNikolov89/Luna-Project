@@ -5,8 +5,9 @@ import { BodyContainer, HorizontalLine, TtitleContent, LinkPages } from './style
 import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
-import { Footer } from '../footer/Footer';
+import { Footer } from '../footer/footer';
 import { AllRestaurants } from '../restaurant/AllRestaurants';
+import {getAllRestaurantsAction} from '../../store/actions/restaurantAction'
 
 
 const Restaurants = () => {
@@ -15,7 +16,7 @@ const Restaurants = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const data = await dispatch(restaurantAction());
+            const data = await dispatch(getAllRestaurantsAction());
             console.log(data);
             setRestaurants(data);
         };
