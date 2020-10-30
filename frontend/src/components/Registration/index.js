@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header'
 import { Footer } from '../footer/footer';
+import baseUrl from '../../helpers/baseUrl'
 
 
 export const Registration = (props) => {
@@ -27,8 +28,8 @@ export const Registration = (props) => {
             body: body,
             headers: headers,
         }
-
-        fetch("http://0.0.0.0:8000/backend/api/auth/registration/ ", config)
+    
+        fetch(`${baseUrl}/backend/api/auth/registration/`, config)
             .then(response => {
                 if (response.ok) {
                     props.history.push("/regmessage");

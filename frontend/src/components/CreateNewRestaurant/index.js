@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header/index';
 import { Footer } from '../footer/footer';
+import baseUrl from '../../helpers/baseUrl'
 
 
 export const CreateNewRestaurant = () => {
@@ -28,7 +29,7 @@ export const CreateNewRestaurant = () => {
             body: body,
         }
 
-        fetch("http://0.0.0.0:8000/backend/api/restaurants/new/", config)
+        fetch(`${baseUrl}/backend/api/restaurants/new/`, config)
 
     }
 
