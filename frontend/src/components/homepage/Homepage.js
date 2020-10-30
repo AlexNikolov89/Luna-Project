@@ -5,7 +5,7 @@ import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
-import { Footer } from '../footer/Footer'
+import { Footer } from '../footer/footer'
 import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
