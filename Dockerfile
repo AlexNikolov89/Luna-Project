@@ -24,8 +24,6 @@ COPY ./scripts /scripts
 RUN chmod +x ./scripts*
 RUN mkdir -p /frontend
 RUN mkdir -p /frontend_tmp
-RUN mkdir -p /media-files
-RUN mkdir -p /static-files
 
 WORKDIR /frontend_tmp
 

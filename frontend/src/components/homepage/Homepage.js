@@ -5,7 +5,7 @@ import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 //import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
-//import Footer from '../footer/footer.js';
+import Footer from '../Footer/footer.js';
 import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
@@ -31,7 +31,7 @@ const Homepage = () => {
             <BestRestaurantsContainer>
                 <RestaurantsList restaurants={restaurants} />
             </BestRestaurantsContainer>
-            {/*<Footer />*/}
+            <Footer />
         </HomepageContainer>
     )
 }
