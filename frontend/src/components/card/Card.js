@@ -20,10 +20,9 @@ const Card = (props) => {
             <TopContainer>
                 <p>{restaurant.name}</p>
                 <p>{restaurant.street}<br/></p> 
-                <Rating rating={restaurant.average_rating} />
+                <Rating rating={restaurant.average_rating.rating} />
             </TopContainer>
             <img src={restaurant.image} alt={restaurant.name} />
-            <image />
         </RestaurantWrapper>
     )
 }

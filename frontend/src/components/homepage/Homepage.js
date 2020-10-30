@@ -1,35 +1,37 @@
-import React, { useState } from 'react'
+import {useDispatch, useSelector} from "react-redux";
+import React, {useEffect} from "react";
 import { HomepageContainer, BestRestaurantsContainer } from './style'
 import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import Card from '../card/Card';
 import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
-// import { Footer } from '../footer/footer'
+import { RestaurantsList } from '../restaurant/RestaurantsList';
+import { Footer } from '../footer/Footer'
+import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
-const Homepage = () => {
+const Homepage = (ß) => {
 
-    const [restaurants, setRestaurants] = useState([]);
+    const restaurants = useSelector((state) => state.restaurants.best_restaurants);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (restaurants == null) {
+            dispatch(getBestRestaurantsAction);
+        }
+    }, []);
 
-    // const useEffect = () => {
-    //     fetch(`${baseUrl}/backend/api/restaurants/`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //     })
-    // }
+    if (restaurants == null) {
+        return <p>Loading restaurants...</p>;
+    }
 
     return (
         <HomepageContainer>
             <Navbar />
             <SearchForm />
-            <BestRatedRestaurant />
+            {/* <BestRatedRestaurant /> */}
             <BestRestaurantsContainer>
-                {restaurants.map((restaurant) => (
-                    <Card restaurant={restaurant} key={restaurant.id}></Card>
-                ))}
+                <RestaurantsList restaurants={restaurants} />
             </BestRestaurantsContainer>
-            {/* <Footer /> */}
+            <Footer />
         </HomepageContainer>
     )
 }

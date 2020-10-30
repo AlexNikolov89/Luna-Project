@@ -64,7 +64,7 @@ export const Login = (props) => {
                         <Style.Line />
                     </Style.ContentWriteLogin>
                     <Style.ContainerInput>
-                        <Style.InputUserNameLogin type="text" placeholder="Username" onChange={emailOnChangeHandler} />
+                        <Style.InputUserNameLogin type="text" placeholder="Email" onChange={emailOnChangeHandler} />
                         <Style.InputPasswordLogin type="password" placeholder="Password" onChange={passwordOnChangeHandler} />
                     </Style.ContainerInput>
                     <Style.ContainerButtonLogin>

@@ -1,3 +1,5 @@
+import { USER_LOGOUT } from "./actionTypes";
+
 export const logoutAction = {
-    type: "LOGOUT"
+    type: USER_LOGOUT
 }

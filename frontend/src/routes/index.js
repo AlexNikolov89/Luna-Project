@@ -11,6 +11,7 @@ import ReviewsPage from '../components/reviewsPage/ReviewsPage';
 import UserPage from '../components/usersPage/UsersPage';
 import { CreateNewRestaurant } from '../components/CreateNewRestaurant';
 import { UserProfile } from '../components/UserProfile/UserProfile';
+import { authHOC } from '../components/authHOC';
 
 export const Routes = () => {
     return (
@@ -20,16 +21,13 @@ export const Routes = () => {
                 <Route exact={true} path="/registration" component={Registration} />
                 <Route exact={true} path="/regmessage" component={MessageRegistration} />
                 <Route exact={true} path="/verification" component={Verification} />
-                <Route exact={true} path="/regmessage" component={MessageRegistration} />
                 {/* <Route exact={true} path="/test" component={Test} /> */}
                 <Route exact={true} path="/createnewresturant" component={CreateNewRestaurant} />
-
-                {/* <Route exact={true} path="/homepage" component={Homepage} /> */}
-                <Route exact={true} path="/homepage" component={Homepage} />
-                <Route exact={true} path='/search' component={SearchPage} />
+                <Route exact={true} path="/homepage" component={authHOC(Homepage)} />
+                <Route exact={true} path='/search' component={authHOC(SearchPage)} />
                 <Route exact={true} path='/search/reviews' component={ReviewsPage} />
                 <Route exact={true} path='/search/users' component={UserPage} />
-                <Route exact={true} path='/profile' component={UserProfile} />
+                <Route exact={true} path='/profile' component={authHOC(UserProfile)} />
             </Switch>
         </Router>
     )
