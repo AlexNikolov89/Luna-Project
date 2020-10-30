@@ -48,6 +48,17 @@ export const SinInButton = styled.button`
     cursor: pointer;
     
 `
+export const SinOutButton = styled.button`
+    background: #E47D31;
+    height: 41px;
+    width: 90px;
+    color: white;
+    border-radius: 20px; 
+    border: none;
+    outline:none;
+    cursor: pointer;
+    
+`
 
 export const ContainerLink = styled.div`
     display:flex;

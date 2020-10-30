@@ -6,6 +6,7 @@ import SearchForm from '../serachForm/SearchForm';
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
 import { Footer } from '../footer/footer';
+import { RestaurantsList } from '../restaurant/RestaurantsList';
 import { AllRestaurants } from '../restaurant/AllRestaurants';
 import {getAllRestaurantsAction} from '../../store/actions/restaurantAction'
 
@@ -29,7 +30,7 @@ const Restaurants = () => {
             <SearchForm />
             <BodyContainer>
                 <TtitleContent>
-                    <Link to='/' style={{ textDecoration: "none" }}><LinkPages>RESTAURANTS</LinkPages></Link>
+                    <Link to='/search' style={{ textDecoration: "none" }}><LinkPages>RESTAURANTS</LinkPages></Link>
                     <Link to='/search/reviews' style={{ textDecoration: "none" }}><LinkPages>REVIEWS</LinkPages></Link>
                     <Link to='/search/users' style={{ textDecoration: "none" }}><LinkPages>USERS</LinkPages></Link>
                 </TtitleContent>
