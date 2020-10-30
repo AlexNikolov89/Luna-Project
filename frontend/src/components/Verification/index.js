@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Style from './style';
 import { Navbar } from '../Header';
 import Footer from '../footer/footer';
+import baseUrl from '../../helpers/baseUrl'
 
 export const Verification = (props) => {
     const [email, setEmail] = useState("");
@@ -47,8 +48,8 @@ export const Verification = (props) => {
             body: body,
             headers: headers,
         }
-
-        fetch("http://0.0.0.0:8000/backend/api/auth/registration/validate/", config)
+        
+        fetch(`${baseUrl}/backend/api/auth/registration/validate/`, config)
             .then(response => {
                 if (response.ok) {
                     props.history.push("/")

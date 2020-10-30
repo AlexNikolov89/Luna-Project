@@ -21,6 +21,7 @@ const MainContainer = styled.section`
         left:0;
     }
 `
+
 // const ContentsContainer = styled.div`
 //     overflow: visible
 //     display:flex;
