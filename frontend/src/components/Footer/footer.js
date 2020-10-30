@@ -6,7 +6,7 @@ import GOOGLE from '../../images/svg/googleplus.svg';
 import INSTAGRAM from '../../images/svg/instagram.svg';
 
 
-export const Footer = () => {
+const Footer = () => {
     return (
         <FooterContainer>
             <SectionUp>
@@ -28,3 +28,4 @@ export const Footer = () => {
     )
 }
 
+export default Footer

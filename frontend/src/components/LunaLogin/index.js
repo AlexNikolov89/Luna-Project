@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Style from './style';
 import { Navbar } from '../Header';
-import { Footer } from '../footer/footer';
+import Footer from '../Footer/footer.js';
 import { USER_LOGIN } from '../../store/actions/actionTypes';
 import baseUrl from '../../helpers/baseUrl'
 
@@ -45,7 +45,7 @@ export const Login = (props) => {
                     const token = data.access;
                     dispatch({ type: USER_LOGIN, payload: token })
 
-                    props.history.push("/search")
+                    props.history.push("/homepage")
                 }
             })
             .catch(error => {

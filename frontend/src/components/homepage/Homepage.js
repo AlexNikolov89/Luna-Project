@@ -3,13 +3,13 @@ import React, {useEffect} from "react";
 import { HomepageContainer, BestRestaurantsContainer } from './style'
 import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
-import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
+//import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
-import { Footer } from '../footer/Footer'
+import Footer from '../Footer/footer.js';
 import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
-const Homepage = (ß) => {
+const Homepage = () => {
 
     const restaurants = useSelector((state) => state.restaurants.best_restaurants);
     const dispatch = useDispatch();
