@@ -24,7 +24,7 @@ const Footer = () => {
                     <InstagramButton src={INSTAGRAM}></InstagramButton>
                 </RightSide>
             </SectionUp>
-        </footer/indexContainer>
+        </FooterContainer>
     )
 }
 
