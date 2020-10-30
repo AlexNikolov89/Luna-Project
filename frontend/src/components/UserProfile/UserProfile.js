@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Navbar } from '../Header'
-import Footer from '../footer/footer';
+import Footer from '../footer/footer.js';
 import {useDispatch, useSelector} from "react-redux";
 import React, {useEffect} from "react";
 import ProfileBackground from '../../images/profile-background.jpeg'
