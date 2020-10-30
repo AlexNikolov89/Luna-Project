@@ -5,11 +5,11 @@ import { Navbar } from '../Header'
 import SearchForm from '../serachRestaurant/SearchRestaurant'
 import BestRatedRestaurant from '../bestRatedRestaurant/BestRatedRestaurant';
 import { RestaurantsList } from '../restaurant/RestaurantsList';
-import Footer from '../footer/footer';
+import Footer from '../footer/footer.js';
 import { getBestRestaurantsAction } from "../../store/actions/restaurantAction";
 
 
-const Homepage = (ß) => {
+const Homepage = () => {
 
     const restaurants = useSelector((state) => state.restaurants.best_restaurants);
     const dispatch = useDispatch();
