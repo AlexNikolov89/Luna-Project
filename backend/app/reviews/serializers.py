@@ -6,6 +6,7 @@ from app.users.serializers import UserSerializer
 
 class ReviewSerializer(serializers.ModelSerializer):
     review_owner = UserSerializer(read_only=True)
+
     class Meta:
         model = RestaurantReview
         fields = ['id', 'restaurant_reviewed', 'content', 'review_owner', 'created', 'rating']
