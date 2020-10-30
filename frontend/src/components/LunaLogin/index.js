@@ -4,6 +4,7 @@ import Style from './style';
 import { Navbar } from '../Header';
 import Footer from '../footer/footer';
 import { USER_LOGIN } from '../../store/actions/actionTypes';
+import baseUrl from '../../helpers/baseUrl'
 
 
 export const Login = (props) => {
@@ -29,8 +30,8 @@ export const Login = (props) => {
             body: body,
             headers: headers,
         }
-
-        fetch("http://0.0.0.0:8000/backend/api/auth/token/", config)
+     
+        fetch(`${baseUrl}/backend/api/auth/token/`, config)
             .then(response => {
                 if (response.ok) {
                     return response.json()
