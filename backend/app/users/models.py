@@ -7,6 +7,10 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
+    def user_directory_path(instance, filename):
+        # file will be uploaded to MEDIA_ROOT/name/<filename>
+        return f'{instance.name}/{filename}'
+
     email = models.EmailField(unique=True)
     username = models.CharField(
         verbose_name='username',
@@ -67,6 +71,8 @@ class User(AbstractUser):
         help_text='Designates whether this user should be treated as active. '
                   'Unselect this instead of deleting accounts.'
     )
+
+    image = models.ImageField(blank=True, null=True, upload_to='user_directory_path')
 
     def __str__(self):
         return self.username
