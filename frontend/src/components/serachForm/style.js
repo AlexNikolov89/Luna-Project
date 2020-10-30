@@ -59,7 +59,7 @@ border: 1px solid #D8D8D8;
     }
 `;
 
-export const ButtonUsersProfile = styled.div `
+export const ButtonCreateRestaurant = styled.div `
     width: 60px;
     border: 1px solid #D8D8D8;
     height: 52px;

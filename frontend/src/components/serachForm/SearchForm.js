@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react'
-import {FormWrapper, SearchBox, Dropdown, ButtonUsersProfile, DropDownButton, Button, Input } from './style'
+import {FormWrapper, SearchBox, Dropdown, ButtonCreateRestaurant, DropDownButton, Button, Input } from './style'
 import ArrowIcon from '../../images/svg/arrow.svg'
 
 const SearchForm = ({restaurants}) => {
@@ -24,7 +24,7 @@ const SearchForm = ({restaurants}) => {
                     </Dropdown>
                     ) : null }
                 </Button>
-                <ButtonUsersProfile><p>+</p></ButtonUsersProfile>
+                <ButtonCreateRestaurant><p>+</p></ButtonCreateRestaurant>
             </FormWrapper>
         </Fragment>
     )
