@@ -26,7 +26,9 @@ class RestaurantReview(models.Model):
     )
     review_owner = models.ForeignKey(
         to=settings.AUTH_USER_MODEL,
+        related_name='reviews',
         on_delete=models.CASCADE,
+
     )
 
     def __str__(self):
